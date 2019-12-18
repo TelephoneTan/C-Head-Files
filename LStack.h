@@ -6,6 +6,7 @@
 #define LSTACK_LSTACK_H
 
 #include <stdexcept>
+#include <utility>
 #include <cstdio>
 #include <LinkedList.h>
 
@@ -14,19 +15,32 @@ namespace Telephone_DS::linkBase::Stack    //Telephone写的Stack的命名空间
     template <typename T> class Stack : protected LinkedList::LinkedList<T>
     {
     public:
-        explicit Stack()    //无参数构造
-                : LinkedList::LinkedList<T>()
+        explicit Stack()                                            //无参数构造
+                : LinkedList::LinkedList<T>::LinkedList()
         {}
-        virtual ~Stack() = default; //析构    //调用完派生类析构函数后会隐式调用基类析构函数    //虚以派生
-        Stack(Stack<T> &src)  //拷贝构造函数
-                : LinkedList::LinkedList<T>(src)
-        {}
-        Stack<T> &operator=(Stack<T> &right)
+        Stack(Stack<T> const &src)                                  //拷贝构造
         {
+            if(this == &src)
+                return;
+            LinkedList::LinkedList<T>::LinkedList(src);
+        }
+        Stack(Stack<T> &&src) noexcept                              //移动构造
+                : LinkedList::LinkedList<T>::LinkedList(std::move(src))
+        {}
+        Stack<T> &operator=(Stack<T> const &right)                  //拷贝赋值
+        {
+            if(this == &right)
+                return *this;
             LinkedList::LinkedList<T>::operator=(right);
             return *this;
         }
-        int isEmpty() override
+        Stack<T> &operator=(Stack<T> &&right) noexcept              //移动赋值
+        {
+            LinkedList::LinkedList<T>::operator=(std::move(right));
+            return *this;
+        }
+        virtual ~Stack() = default;                                 //析构    //虚以派生
+        int isEmpty() override  //if empty , return 1(true)
         {
             return LinkedList::LinkedList<T>::isEmpty();
         }
@@ -34,18 +48,20 @@ namespace Telephone_DS::linkBase::Stack    //Telephone写的Stack的命名空间
         {
             return LinkedList::LinkedList<T>::len();
         }
-        void push(T x)
+        virtual void push(T x)
         {
             LinkedList::LinkedList<T>::addAfter(LinkedList::LinkedList<T>::len() - 1 , x);
         }
-        void pop()
+        virtual int pop()   //if empty , return -1 ; or else , return 0.
         {
             if(!LinkedList::LinkedList<T>::isEmpty())
             {
-                LinkedList::LinkedList<T>::deleteFrom(LinkedList::LinkedList<T>::len() - 1);
+                LinkedList::LinkedList<T>::deleteFrom(LinkedList::LinkedList<T>::len() - 1 , 1);
+                return 0;
             }
+            return -1;
         }
-        T top()
+        virtual T top()
         {
             if(!LinkedList::LinkedList<T>::isEmpty())
             {

@@ -7,6 +7,7 @@
 
 #include <stdexcept>
 #include <cstdio>
+#include <utility>
 #include <ArrayStorage.h>
 
 namespace Telephone_DS::arrayBase::Queue    //Telephone写的Queue的命名空间
@@ -14,22 +15,35 @@ namespace Telephone_DS::arrayBase::Queue    //Telephone写的Queue的命名空�
     template <typename T> class Queue : protected ArrayStorage::ArrayStorage<T>
     {
     public:
-        explicit Queue(long scale)  //有参数构造
-                : ArrayStorage::ArrayStorage<T>(scale)
+        explicit Queue(long scale)                                      //有参数构造
+                : ArrayStorage::ArrayStorage<T>::ArrayStorage(scale)
         {}
-        explicit Queue()    //无参数构造
-                : ArrayStorage::ArrayStorage<T>()
+        explicit Queue()                                                //无参数构造
+                : ArrayStorage::ArrayStorage<T>::ArrayStorage()
         {}
-        virtual ~Queue() = default; //析构    //调用完派生类析构函数后会隐式调用基类析构函数    //虚以派生
-        Queue(Queue<T> &src)  //拷贝构造函数
-                : ArrayStorage::ArrayStorage<T>(src)
-        {}
-        Queue<T> &operator=(Queue<T> &right)
+        Queue(Queue<T> const &src)                                      //拷贝构造
         {
+            if(this == &src)
+                return;
+            ArrayStorage::ArrayStorage<T>::ArrayStorage(src);
+        }
+        Queue(Queue<T> &&right) noexcept                                //移动构造
+                : ArrayStorage::ArrayStorage<T>::ArrayStorage(std::move(right))
+        {}
+        Queue<T> &operator=(Queue<T> const &right)                      //拷贝赋值
+        {
+            if(this == &right)
+                return *this;
             ArrayStorage::ArrayStorage<T>::operator=(right);
             return *this;
         }
-        int isEmpty() override
+        Queue<T> &operator=(Queue<T> &&right) noexcept                  //移动赋值
+        {
+            ArrayStorage::ArrayStorage<T>::operator=(std::move(right));
+            return *this;
+        }
+        virtual ~Queue() = default;                                     //析构    //虚以派生
+        int isEmpty() override      //if empty , return 1(true)
         {
             return ArrayStorage::ArrayStorage<T>::isEmpty();
         }
@@ -37,18 +51,20 @@ namespace Telephone_DS::arrayBase::Queue    //Telephone写的Queue的命名空�
         {
             return ArrayStorage::ArrayStorage<T>::len();
         }
-        void push(T x)
+        virtual void push(T x)
         {
             ArrayStorage::ArrayStorage<T>::addAfter(ArrayStorage::ArrayStorage<T>::len() - 1 , x);
         }
-        void pop()
+        virtual int pop()           //if empty , return -1 ; or else , return 0.
         {
             if(!ArrayStorage::ArrayStorage<T>::isEmpty())
             {
-                ArrayStorage::ArrayStorage<T>::deleteFrom(0);
+                ArrayStorage::ArrayStorage<T>::deleteFrom(0 , 1);
+                return 0;
             }
+            return -1;
         }
-        T front()
+        virtual T front()
         {
             if(!ArrayStorage::ArrayStorage<T>::isEmpty())
             {
@@ -58,7 +74,7 @@ namespace Telephone_DS::arrayBase::Queue    //Telephone写的Queue的命名空�
             std::sprintf(exp , "[function front()] Queue is empty!");
             throw std::out_of_range(exp);
         }
-        T back()
+        virtual T back()
         {
             if(!ArrayStorage::ArrayStorage<T>::isEmpty())
             {

@@ -23,26 +23,11 @@ namespace Telephone_DS::linkBase::LinkedList
             Node *next;
         }*now = nullptr;              //now指针
     public:
-        explicit LinkedList() = default;    //构造函数
-        virtual ~LinkedList()                       //析构    //虚以派生
-        {//1.递推地释放链式数据 2.链表属性重置
-            Node *needFree = now;
-            //如果需要释放结点,那么释放的第一个结点是now结点
-            //如果不需要释放结点,那么now结点为nullptr
-            for (long i = 0; i < length; ++i)//次数控制:次数与长度相等
-            {
-                Node *temp = needFree->next;
-                std::free(needFree);//此处会出现野指针,但可以保证不会再使用野指针进行访问或操作内存
-                needFree = temp;
-                //推进
-            }
-            needFree = nullptr;
-            length = 0;
-            index = -1;
-            now = nullptr;
-        }
-        LinkedList(LinkedList<T> &src)    //拷贝构造函数
+        explicit LinkedList() = default;                            //构造函数
+        LinkedList(LinkedList<T> const &src)                        //拷贝构造函数，不应改变被复制对象
         {
+            if(this == &src)
+                return;
             if(src.length == 0)
             {
                 length = 0;
@@ -58,6 +43,7 @@ namespace Telephone_DS::linkBase::LinkedList
                 for (long i = 0; i < src.length; ++i)
                 {
                     Node *newNode = (Node *)std::malloc(sizeof(Node));
+                    newNode->next = newNode->before = nullptr;
                     newNode->data = src.at(i);
                     if(beforeNode != nullptr)
                     {
@@ -84,7 +70,18 @@ namespace Telephone_DS::linkBase::LinkedList
                 now = zeroNode;
             }
         }
-        LinkedList<T> &operator=(LinkedList<T> &right)
+        LinkedList(LinkedList<T> &&src) noexcept                    //移动构造
+        {
+            if(this == &src)
+                return;
+            length = src.length;
+            index = src.index;
+            now = src.now;
+            src.length = 0;
+            src.index = -1;
+            src.now = nullptr;
+        }
+        LinkedList<T> &operator=(LinkedList<T> const &right)        //拷贝赋值函数，不应改变被复制对象
         {
             if(this != &right)
             {
@@ -124,6 +121,7 @@ namespace Telephone_DS::linkBase::LinkedList
                     for (long i = 0; i < right.length; ++i)
                     {
                         Node *newNode = (Node *)std::malloc(sizeof(Node));
+                        newNode->next = newNode->before = nullptr;
                         newNode->data = right.at(i);
                         if(beforeNode != nullptr)
                         {
@@ -153,7 +151,7 @@ namespace Telephone_DS::linkBase::LinkedList
             }
             return *this;
         }
-        LinkedList<T> &operator=(LinkedList<T> &&right)
+        LinkedList<T> &operator=(LinkedList<T> &&right) noexcept    //移动赋值
         {
             if(this != &right)
             {
@@ -177,7 +175,7 @@ namespace Telephone_DS::linkBase::LinkedList
                 now = nullptr;
                 /******重置******/
 
-                /*赋值与内存拷贝*/
+                /*赋值与内存窃取*/
                 if(right.length == 0)
                 {
                     length = 0;
@@ -187,42 +185,34 @@ namespace Telephone_DS::linkBase::LinkedList
                 else
                 {
                     length = right.length;
-                    Node *beforeNode = nullptr;
-                    Node *zeroNode = nullptr;
-                    Node *tailNode = nullptr;
-                    for (long i = 0; i < right.length; ++i)
-                    {
-                        Node *newNode = (Node *)std::malloc(sizeof(Node));
-                        newNode->data = right.at(i);
-                        if(beforeNode != nullptr)
-                        {
-                            beforeNode->next = newNode;
-                            newNode->before = beforeNode;
-                            newNode->next = nullptr;
-                        }
-                        else
-                        {
-                            zeroNode = newNode; //记录0号结点地址
-
-                            newNode->before = nullptr;
-                            newNode->next = nullptr;
-                        }
-                        if(i == right.length - 1)
-                        {
-                            tailNode = newNode; //记录尾结点地址
-                        }
-                        beforeNode = newNode;
-                    }
-                    tailNode->next = zeroNode;
-                    zeroNode->before = tailNode;
-                    index = 0;
-                    now = zeroNode;
+                    index = right.index;
+                    now = right.now;
+                    right.length = 0;
+                    right.index = -1;
+                    right.now = nullptr;
                 }
-                /*赋值与内存拷贝*/
+                /*赋值与内存窃取*/
             }
             return *this;
         }
-        void addBefore(long Index , T x)
+        virtual ~LinkedList()                                       //析构    //虚以派生
+        {//1.递推地释放链式数据 2.链表属性重置
+            Node *needFree = now;
+            //如果需要释放结点,那么释放的第一个结点是now结点
+            //如果不需要释放结点,那么now结点为nullptr
+            for (long i = 0; i < length; ++i)//次数控制:次数与长度相等
+            {
+                Node *temp = needFree->next;
+                std::free(needFree);//此处会出现野指针,但可以保证不会再使用野指针进行访问或操作内存
+                needFree = temp;
+                //推进
+            }
+            needFree = nullptr;
+            length = 0;
+            index = -1;
+            now = nullptr;
+        }
+        virtual void addBefore(long Index , T x)
         {
             if(Index >= 0 && Index < length)
             {//如果序号合法
@@ -279,6 +269,7 @@ namespace Telephone_DS::linkBase::LinkedList
                 Node *newBefore = now->before;
                 Node *newNext = now;
                 Node * newNode = (Node *)std::malloc(sizeof(Node));
+                newNode->next = newNode->before = nullptr;
                 newNode->data = x;
                 newNode->next = newNext;
                 newNode->before = newBefore;
@@ -290,6 +281,7 @@ namespace Telephone_DS::linkBase::LinkedList
             else if(length == 0)
             {//或序号不合法但是当前长度为0
                 now = (Node *)std::malloc(sizeof(Node));
+                now->before = now->next = nullptr;
                 index = 0;
                 length++;
                 now->data = x;
@@ -302,7 +294,7 @@ namespace Telephone_DS::linkBase::LinkedList
                          Index);
             throw std::out_of_range(exp);
         }
-        void addAfter(long Index , T x)
+        virtual void addAfter(long Index , T x)
         {
             if(Index >= 0 && Index < length)
             {//如果序号合法
@@ -359,6 +351,7 @@ namespace Telephone_DS::linkBase::LinkedList
                 Node *newBefore = now;
                 Node *newNext = now->next;
                 Node *newNode = (Node *)std::malloc(sizeof(Node));
+                newNode->next = newNode->before = nullptr;
                 newNode->data = x;
                 newNode->next = newNext;
                 newNode->before = newBefore;
@@ -369,6 +362,7 @@ namespace Telephone_DS::linkBase::LinkedList
             else if(length == 0)
             {//或序号不合法但是当前长度为0
                 now = (Node *)std::malloc(sizeof(Node));
+                now->next = now->before = nullptr;
                 index = 0;
                 length++;
                 now->data = x;
@@ -381,7 +375,7 @@ namespace Telephone_DS::linkBase::LinkedList
                          Index);
             throw std::out_of_range(exp);
         }
-        T at(long Index)
+        virtual T &at(long Index)
         {
             if(Index >= 0 && Index < length)
             {
@@ -441,68 +435,7 @@ namespace Telephone_DS::linkBase::LinkedList
             std::sprintf(exp , "[function at()] Do not have such node : index(%ld)" , Index);
             throw std::out_of_range(exp);
         }
-        void edit(long Index , T x)
-        {
-            if(Index >= 0 && Index < length)
-            {
-                if(Index == index)
-                    ;
-                else if(Index < index)
-                {
-                    long dis = index - Index;//往前走(按before走)的距离
-                    if((double)dis > length / (double)2)
-                    {//按next走
-                        dis = length - dis;
-                        for (long i = 0; i < dis; ++i)
-                        {
-                            now = now->next;
-                            index++;
-                            index %= length;
-                        }
-                    }
-                    else
-                    {//按before走
-                        for (long i = 0; i < dis; ++i)
-                        {
-                            now = now->before;
-                            index--;
-                            if(index == -1)
-                                index = length - 1;
-                        }
-                    }
-                }
-                else if(Index > index)
-                {
-                    long dis = Index - index;//往后走(按next走)的距离
-                    if((double)dis < length / (double)2)
-                    {//按next走
-                        for (long i = 0; i < dis; ++i)
-                        {
-                            now = now->next;
-                            index++;
-                            index %= length;
-                        }
-                    }
-                    else
-                    {//按before走
-                        dis = length - dis;
-                        for (long i = 0; i < dis; ++i)
-                        {
-                            now = now->before;
-                            index--;
-                            if(index == -1)
-                                index = length - 1;
-                        }
-                    }
-                }
-                now->data = x;
-                return;
-            }
-            char exp[100];
-            std::sprintf(exp , "[function edit()] Do not have such node : index(%ld)" , Index);
-            throw std::out_of_range(exp);
-        }
-        void deleteFrom(long Index , long num = 1)
+        virtual void deleteFrom(long Index , long num)  //删除的结点包括Index所代表的结点
         {
             char exp[100];
             if(Index >= 0 && Index < length)
@@ -627,7 +560,7 @@ namespace Telephone_DS::linkBase::LinkedList
         {
             return length;
         }
-        virtual int isEmpty()
+        virtual int isEmpty()   //如果是空的，返回 1(true)
         {
             return (length == 0)?(1):(0);
         }
