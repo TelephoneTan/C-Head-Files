@@ -22,11 +22,8 @@ namespace Telephone_DS::arrayBase::Queue    //Telephone写的Queue的命名空�
                 : ArrayStorage::ArrayStorage<T>::ArrayStorage()
         {}
         Queue(Queue<T> const &src)                                      //拷贝构造
-        {
-            if(this == &src)
-                return;
-            ArrayStorage::ArrayStorage<T>::ArrayStorage(src);
-        }
+                : ArrayStorage::ArrayStorage<T>::ArrayStorage(src)
+        {}
         Queue(Queue<T> &&right) noexcept                                //移动构造
                 : ArrayStorage::ArrayStorage<T>::ArrayStorage(std::move(right))
         {}

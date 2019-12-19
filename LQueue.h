@@ -19,11 +19,8 @@ namespace Telephone_DS::linkBase::Queue
                 : LinkedList::LinkedList<T>::LinkedList()
         {}
         Queue(Queue<T> const &src)                                      //拷贝构造
-        {
-            if(this == &src)
-                return;
-            LinkedList::LinkedList<T>::LinkedList(src);
-        }
+                : LinkedList::LinkedList<T>::LinkedList(src)
+        {}
         Queue(Queue<T> &&src) noexcept                                  //移动构造
             : LinkedList::LinkedList<T>::LinkedList(std::move(src))
         {}

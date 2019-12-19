@@ -21,11 +21,8 @@ namespace Telephone_DS::arrayBase::Stack    //Telephone写的Stack的命名空�
                 : ArrayStorage::ArrayStorage<T>::ArrayStorage()
         {}
         Stack(Stack<T> const &src)                                  //拷贝构造
-        {
-            if(this == &src)
-                return;
-            ArrayStorage::ArrayStorage<T>::ArrayStorage(src);
-        }
+                : ArrayStorage::ArrayStorage<T>::ArrayStorage(src)
+        {}
         Stack(Stack<T> &&src) noexcept                              //移动构造
                 : ArrayStorage::ArrayStorage<T>::ArrayStorage(std::move(src))
         {}

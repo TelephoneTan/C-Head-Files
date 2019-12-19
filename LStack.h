@@ -19,11 +19,8 @@ namespace Telephone_DS::linkBase::Stack    //Telephone写的Stack的命名空间
                 : LinkedList::LinkedList<T>::LinkedList()
         {}
         Stack(Stack<T> const &src)                                  //拷贝构造
-        {
-            if(this == &src)
-                return;
-            LinkedList::LinkedList<T>::LinkedList(src);
-        }
+                : LinkedList::LinkedList<T>::LinkedList(src)
+        {}
         Stack(Stack<T> &&src) noexcept                              //移动构造
                 : LinkedList::LinkedList<T>::LinkedList(std::move(src))
         {}
