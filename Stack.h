@@ -50,9 +50,14 @@ namespace Telephone_DS::arrayBase::Stack    //Telephone写的Stack的命名空�
         {
             return ArrayStorage::ArrayStorage<T>::len();
         }
-        virtual void push(T x)
+        virtual void push(T &x)
         {
             ArrayStorage::ArrayStorage<T>::addAfter(ArrayStorage::ArrayStorage<T>::len() - 1 , x);
+        }
+        virtual void push(T &&x)
+        {
+            ArrayStorage::ArrayStorage<T>::addAfter(ArrayStorage::ArrayStorage<T>::len() - 1 ,
+                    std::move(x));
         }
         virtual int pop()       //if empty , return -1 ; or else , return 0.
         {

@@ -212,7 +212,7 @@ namespace Telephone_DS::linkBase::LinkedList
             index = -1;
             now = nullptr;
         }
-        virtual void addBefore(long Index , T x)
+        virtual void addBefore(long Index , T &x)
         {
             if(Index >= 0 && Index < length)
             {//如果序号合法
@@ -294,7 +294,89 @@ namespace Telephone_DS::linkBase::LinkedList
                          Index);
             throw std::out_of_range(exp);
         }
-        virtual void addAfter(long Index , T x)
+        virtual void addBefore(long Index , T &&x)
+        {
+            if(Index >= 0 && Index < length)
+            {//如果序号合法
+                if(Index == index)
+                    ;
+                else if(Index < index)
+                {
+                    long dis = index - Index;//往前走(按before走)的距离
+                    if((double)dis > length / (double)2)
+                    {//按next走
+                        dis = length - dis;
+                        for (long i = 0; i < dis; ++i)
+                        {
+                            now = now->next;
+                            index++;
+                            index %= length;
+                        }
+                    }
+                    else
+                    {//按before走
+                        for (long i = 0; i < dis; ++i)
+                        {
+                            now = now->before;
+                            index--;
+                            if(index == -1)
+                                index = length - 1;
+                        }
+                    }
+                }
+                else if(Index > index)
+                {
+                    long dis = Index - index;//往后走(按next走)的距离
+                    if((double)dis < length / (double)2)
+                    {//按next走
+                        for (long i = 0; i < dis; ++i)
+                        {
+                            now = now->next;
+                            index++;
+                            index %= length;
+                        }
+                    }
+                    else
+                    {//按before走
+                        dis = length - dis;
+                        for (long i = 0; i < dis; ++i)
+                        {
+                            now = now->before;
+                            index--;
+                            if(index == -1)
+                                index = length - 1;
+                        }
+                    }
+                }
+                Node *newBefore = now->before;
+                Node *newNext = now;
+                Node * newNode = (Node *)std::malloc(sizeof(Node));
+                newNode->next = newNode->before = nullptr;
+                newNode->data = std::move(x);
+                newNode->next = newNext;
+                newNode->before = newBefore;
+                newBefore->next = newNext->before = newNode;
+                index++;
+                length++;
+                return;
+            }
+            else if(length == 0)
+            {//或序号不合法但是当前长度为0
+                now = (Node *)std::malloc(sizeof(Node));
+                now->before = now->next = nullptr;
+                index = 0;
+                length++;
+                now->data = std::move(x);
+                now->next = now;
+                now->before = now;
+                return;
+            }
+            char exp[100];
+            std::sprintf(exp , "[function addBefore()] Do not have such node : index(%ld)" ,
+                         Index);
+            throw std::out_of_range(exp);
+        }
+        virtual void addAfter(long Index , T &x)
         {
             if(Index >= 0 && Index < length)
             {//如果序号合法
@@ -372,6 +454,88 @@ namespace Telephone_DS::linkBase::LinkedList
             }
             char exp[100];
             std::sprintf(exp , "[function addAfter()] Do not have such node : index(%ld)" ,
+                         Index);
+            throw std::out_of_range(exp);
+        }
+        virtual void addAfter(long Index , T &&x)
+        {
+            if(Index >= 0 && Index < length)
+            {//如果序号合法
+                if(Index == index)
+                    ;
+                else if(Index < index)
+                {
+                    long dis = index - Index;//往前走(按before走)的距离
+                    if((double)dis > length / (double)2)
+                    {//按next走
+                        dis = length - dis;
+                        for (long i = 0; i < dis; ++i)
+                        {
+                            now = now->next;
+                            index++;
+                            index %= length;
+                        }
+                    }
+                    else
+                    {//按before走
+                        for (long i = 0; i < dis; ++i)
+                        {
+                            now = now->before;
+                            index--;
+                            if(index == -1)
+                                index = length - 1;
+                        }
+                    }
+                }
+                else if(Index > index)
+                {
+                    long dis = Index - index;//往后走(按next走)的距离
+                    if((double)dis < length / (double)2)
+                    {//按next走
+                        for (long i = 0; i < dis; ++i)
+                        {
+                            now = now->next;
+                            index++;
+                            index %= length;
+                        }
+                    }
+                    else
+                    {//按before走
+                        dis = length - dis;
+                        for (long i = 0; i < dis; ++i)
+                        {
+                            now = now->before;
+                            index--;
+                            if(index == -1)
+                                index = length - 1;
+                        }
+                    }
+                }
+                Node *newBefore = now->before;
+                Node *newNext = now;
+                Node * newNode = (Node *)std::malloc(sizeof(Node));
+                newNode->next = newNode->before = nullptr;
+                newNode->data = std::move(x);
+                newNode->next = newNext;
+                newNode->before = newBefore;
+                newBefore->next = newNext->before = newNode;
+                index++;
+                length++;
+                return;
+            }
+            else if(length == 0)
+            {//或序号不合法但是当前长度为0
+                now = (Node *)std::malloc(sizeof(Node));
+                now->before = now->next = nullptr;
+                index = 0;
+                length++;
+                now->data = std::move(x);
+                now->next = now;
+                now->before = now;
+                return;
+            }
+            char exp[100];
+            std::sprintf(exp , "[function addBefore()] Do not have such node : index(%ld)" ,
                          Index);
             throw std::out_of_range(exp);
         }

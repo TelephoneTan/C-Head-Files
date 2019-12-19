@@ -187,7 +187,7 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
             head = nullptr;
             tail = nullptr;
         }
-        virtual void addBefore(long index , T x)
+        virtual void addBefore(long index , T &x)
         {
             if(length == memLen)    //满了或尚未分配空间     //空间分配
             {
@@ -285,7 +285,105 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                 throw std::out_of_range(exp);
             }
         }
-        virtual void addAfter(long index , T x)
+        virtual void addBefore(long index , T &&x)
+        {
+            if(length == memLen)    //满了或尚未分配空间     //空间分配
+            {
+                if (memLen == 0)
+                {//尚未分配空间
+                    memHead = (T *)std::realloc(memHead,
+                                                (memLen + scale) * sizeof(T));
+                    std::memset(memHead + memLen , 0 , scale * sizeof(T));
+                    memLen += scale;
+                } else
+                {//满了
+                    if (head == tail)
+                    {/*首尾粘连 , 需要先分配空间并更新memHead指针和memLen值 , 再更新head和tail指针 ,
+                    再迁移数据 , 最后更新head指针*/
+                        long dis = head - memHead;
+                        size_t moveSize = (length - dis) * sizeof(T);
+                        memHead = (T *)std::realloc(memHead,
+                                                    (memLen + scale) * sizeof(T));
+                        std::memset(memHead + memLen, 0, scale * sizeof(T));
+                        memLen += scale;
+                        head = tail = memHead + dis;
+                        std::memmove(head + scale, head, moveSize);
+                        head += scale;
+                    } else
+                    {//首尾分离 , 需要先分配空间并更新memHead指针和memLen值 , 再更新head和tail指针
+                        memHead = (T *)std::realloc(memHead,
+                                                    (memLen + scale) * sizeof(T));
+                        std::memset(memHead + memLen, 0, scale * sizeof(T));
+                        memLen += scale;
+                        head = memHead;
+                        tail = head + length;
+                    }
+                }
+            }
+        
+            //扩展空间后 , 长度不为0的情况下
+        
+            //需要判断下标是否合法
+            //通过逻辑上的前后连续赋值 , 实现插入 , 最后更新length、head、tail
+            //通过计算得出是移动前段数据还是移动后段数据
+        
+            //扩展空间后 , 长度为0的情况下
+        
+            //无需判断下标是否合法
+            //直接在memHead后放置第一个结点 , 并更新length、head、tail
+        
+            if(length == 0)
+            {//无需判断下标合法 , 将第一个结点设置为memHead指向的首个元素 , 设置好length、head和tail ,
+                // 设置好新结点的值
+                *(memHead) = std::move(x);
+                length++;
+                head = memHead;
+                tail = memHead + 1;
+            } else
+            {//需要判断下标合法
+                if(index >= 0 && index < length)
+                {
+                    T *MemTail = memHead + memLen;
+                    T *MemHead = memHead;
+                    if(index < length / 2)
+                    {//移动前段
+                        T *w = findBefore(head , MemHead , MemTail);//逻辑上头结点的前一个结点
+                        T *n = w;
+                        long times = index;
+                        for (long i = 0; i < times; ++i)
+                        {
+                            T *temp = findNext(w , MemHead , MemTail);
+                            *w = *temp;
+                            w = temp;
+                        }
+                        *w = std::move(x);
+                        head = n;
+                        length++;
+                    } else
+                    {//移动后段
+                        T *w = tail;
+                        T *n = w + 1;
+                        long times = length - 1 - index + 1;
+                        for (long i = 0; i < times; ++i)
+                        {
+                            T *temp = findBefore(w , MemHead , MemTail);
+                            *w = *temp;
+                            w = temp;
+                        }
+                        *w = std::move(x);
+                        tail = n;
+                        length++;
+                    }
+                    return;
+                }
+                //抛出异常
+                char exp[100];
+                std::sprintf(exp , "[function addBefore()] Do not have such node : index(%ld)" ,
+                             index);
+                throw std::out_of_range(exp);
+            }
+        }
+        virtual void addAfter(long index , T &x)
         {
             if(length == memLen)    //满了或尚未分配空间     //空间分配
             {
@@ -371,6 +469,104 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                             w = temp;
                         }
                         *w = x;
+                        tail = n;
+                        length++;
+                    }
+                    return;
+                }
+                //抛出异常
+                char exp[100];
+                std::sprintf(exp , "[function addAfter()] Do not have such node : index(%ld)" ,
+                             index);
+                throw std::out_of_range(exp);
+            }
+        }
+        virtual void addAfter(long index , T &&x)
+        {
+            if(length == memLen)    //满了或尚未分配空间     //空间分配
+            {
+                if (memLen == 0)
+                {//尚未分配空间
+                    memHead = (T *)std::realloc(memHead,
+                                                (memLen + scale) * sizeof(T));
+                    std::memset(memHead + memLen, 0, scale * sizeof(T));
+                    memLen += scale;
+                } else
+                {//满了
+                    if (head == tail)
+                    {/*首尾粘连 , 需要先分配空间并更新memHead指针和memLen值 , 再更新head和tail指针 ,
+                    再迁移数据 , 最后更新head指针*/
+                        long dis = head - memHead;
+                        size_t moveSize = (length - dis) * sizeof(T);
+                        memHead = (T *)std::realloc(memHead,
+                                                    (memLen + scale) * sizeof(T));
+                        std::memset(memHead + memLen, 0, scale * sizeof(T));
+                        memLen += scale;
+                        head = tail = memHead + dis;
+                        std::memmove(head + scale, head, moveSize);
+                        head += scale;
+                    } else
+                    {//首尾分离 , 需要先分配空间并更新memHead指针和memLen值 , 再更新head和tail指针
+                        memHead = (T *)std::realloc(memHead,
+                                                    (memLen + scale) * sizeof(T));
+                        std::memset(memHead + memLen, 0, scale * sizeof(T));
+                        memLen += scale;
+                        head = memHead;
+                        tail = head + length;
+                    }
+                }
+            }
+        
+            //扩展空间后 , 长度不为0的情况下
+        
+            //需要判断下标是否合法
+            //通过逻辑上的前后连续赋值 , 实现插入 , 最后更新length、head、tail
+            //通过计算得出是移动前段数据还是移动后段数据
+        
+            //扩展空间后 , 长度为0的情况下
+        
+            //无需判断下标是否合法
+            //直接在memHead后放置第一个结点 , 并更新length、head、tail
+        
+            if(length == 0)
+            {//无需判断下标合法 , 将第一个结点设置为memHead指向的首个元素 , 设置好length、head和tail ,
+                // 设置好新结点的值
+                *(memHead) = std::move(x);
+                length++;
+                head = memHead;
+                tail = memHead + 1;
+            } else
+            {//需要判断下标合法
+                if(index >= 0 && index < length)
+                {
+                    T *MemTail = memHead + memLen;
+                    T *MemHead = memHead;
+                    if(index < length / 2)
+                    {//移动前段
+                        T *w = findBefore(head , MemHead , MemTail);//逻辑上头结点的前一个结点
+                        T *n = w;
+                        long times = index + 1;
+                        for (long i = 0; i < times; ++i)
+                        {
+                            T *temp = findNext(w , MemHead , MemTail);
+                            *w = *temp;
+                            w = temp;
+                        }
+                        *w = std::move(x);
+                        head = n;
+                        length++;
+                    } else
+                    {//移动后段
+                        T *w = tail;
+                        T *n = w + 1;
+                        long times = length - 1 - index;
+                        for (long i = 0; i < times; ++i)
+                        {
+                            T *temp = findBefore(w , MemHead , MemTail);
+                            *w = *temp;
+                            w = temp;
+                        }
+                        *w = std::move(x);
                         tail = n;
                         length++;
                     }

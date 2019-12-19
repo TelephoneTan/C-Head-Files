@@ -48,9 +48,14 @@ namespace Telephone_DS::linkBase::Stack    //Telephone写的Stack的命名空间
         {
             return LinkedList::LinkedList<T>::len();
         }
-        virtual void push(T x)
+        virtual void push(T &x)
         {
             LinkedList::LinkedList<T>::addAfter(LinkedList::LinkedList<T>::len() - 1 , x);
+        }
+        virtual void push(T &&x)
+        {
+            LinkedList::LinkedList<T>::addAfter(LinkedList::LinkedList<T>::len() - 1 ,
+                    std::move(x));
         }
         virtual int pop()   //if empty , return -1 ; or else , return 0.
         {
