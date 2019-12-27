@@ -12,7 +12,7 @@
 namespace Telephone_DS::linkBase::LinkedList
 {
     template <typename T> class LinkedList
-    {
+    {   /* Do not create a LinkedList of reference type*/
     private:
         long length = 0L;   //链表当前元素个数
         long index = -1L;    //now指针当前指示的结点的序号

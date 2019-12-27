@@ -13,7 +13,7 @@
 namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的命名空间
 {
     template <typename T> class ArrayStorage
-    {//#include <cstdlib>//#include <cstdio>//#include <cstring>//#include <stdexcept>
+    {   /* Do not create an ArrayStorage of reference type*/
     private:
         long scale = 100;           //每次增加空间时增加的可容纳元素个数
         T *memHead = nullptr;       //可用空间首地址
