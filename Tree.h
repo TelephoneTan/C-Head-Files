@@ -401,7 +401,7 @@ namespace Telephone_DS::treeBase::Tree
                  * the tree node
                  *
                  * Tip:
-                 * 1. the tree node itself will be included in the list
+                 * 1. the tree node itself will be included in the list as well
                  * 2. the order of the returned list is:
                  *        (place the tree root-up)
                  *    row by row , up-to-down , left-to-right
@@ -591,9 +591,95 @@ namespace Telephone_DS::treeBase::Tree
             }
             return res;
         }
-        virtual auto findNodes() -> linkBase::LinkedList::LinkedList <TreeNode<T>*>
-        {
-
+        virtual auto findNodes(T const &data) -> linkBase::LinkedList::LinkedList <TreeNode<T>*>
+        {   /* return a list consisting of nodes containing specified data(including the root node)
+             *
+             * Tip:
+             * the order of nodes in the returned list is:
+             *  (place the tree root-up)
+             * up-to-down , left-to-right
+             *
+             * how to compare:
+             * if the type of data is @floating-point(float , double , long double) number , use
+             * floating-point error (1e-6);
+             * or else , use operator !=/==
+             * */
+            linkBase::Queue::Queue <TreeNode<T>*> row;
+            linkBase::LinkedList::LinkedList <TreeNode<T>*> res;
+            row.push(&root);
+            while(!row.isEmpty())
+            {
+                int times = row.len();
+                for (int i = 0; i < times; ++i)
+                {
+                    TreeNode<T> *f = row.front();
+                    if(typeid(T) == typeid(float) || typeid(T) == typeid(double)
+                       || typeid(T) == typeid(long double))
+                    {
+                        if(std::fabs(f->data - data) <= 1e-6)
+                        {
+                            res.addAfter(res.len() - 1 , f);
+                        }
+                    } else
+                    {
+                        if(f->data == data)
+                        {
+                            res.addAfter(res.len() - 1 , f);
+                        }
+                    }
+                    if(!f->isLeaf())
+                    {
+                        linkBase::LinkedList::LinkedList <TreeNode<T>*> childrenList
+                            = std::move(f->getChildren());
+                        for (int j = 0; j < childrenList.len(); ++j)
+                        {
+                            row.push(childrenList.at(j));
+                        }
+                    }
+                    row.pop();
+                }
+            }
+            return std::move(res);
+        }
+        virtual auto findNode(T const &data) -> TreeNode<T>*
+        {   /* return the first node containing specified data
+             *
+             * @return:
+             * if the node found , return a pointer to it;
+             * or else , return a null pointer
+             *
+             * Tip:
+             * 1. the searching scope includes the root node
+             * 2. the order of search is:
+             *        (place the tree root-up)
+             *    row by row , up-to-down , left-to-right
+             *
+             * how to compare:
+             * if the type of data is @floating-point(float , double , long double) number , use
+             * floating-point error (1e-6);
+             * or else , use operator ==
+             * */
+            linkBase::LinkedList::LinkedList <TreeNode<T>*> allNodes
+                = std::move(root.getAllNodes());
+            for (int i = 0; i < allNodes.len(); ++i)
+            {
+                TreeNode<T> *node = allNodes.at(i);
+                if(typeid(T) == typeid(float) || typeid(T) == typeid(double)
+                   || typeid(T) == typeid(long double))
+                {
+                    if(std::fabs(node->data - data) <= 1e-6)
+                    {
+                        return node;
+                    }
+                } else
+                {
+                    if(node->data == data)
+                    {
+                        return node;
+                    }
+                }
+            }
+            return nullptr;
         }
     };
 }
