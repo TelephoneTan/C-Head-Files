@@ -2,6 +2,8 @@
 // Created by Telephone on 2019/12/29 0029.
 //
 
+/// @file Tree.h
+
 #ifndef TREE_TREE_H
 #define TREE_TREE_H
 
@@ -12,32 +14,71 @@
 #include <LStack.h>
 #include <cmath>
 
+/// namespace of common tree
 namespace Telephone_DS::treeBase::Tree
 {
+    /**
+     * @brief common tree
+     * @tparam T type of data in tree-node
+     */
     template <typename T> class Tree
     {
     private:
+        /**
+         * @brief tree-node of common tree
+         * @tparam U type of data in tree-node
+         * @warning this is a private class defined in class Tree
+         */
         template <typename U> class TreeNode
         {
         public:
+            /// data of tree-node
             U data;
         private:
+            /// pointer to parent node
             TreeNode<U> *parent = nullptr;
+            /**
+             * a [list](@ref Telephone_DS::linkBase::LinkedList::LinkedList) of pointers to
+             * child nodes
+             */
             linkBase::LinkedList::LinkedList<TreeNode<U>*> children;
         public:
-            explicit TreeNode(U const &d)                                   //general constructor(copy)
+            /**
+             * @brief general constructor(copy)
+             * @param d data of the new node
+             * @note use copy-constructor of type T
+             */
+            explicit TreeNode(U const &d)
                     : data(d)
             {}
-            explicit TreeNode(U &&d)                                        //general constructor(move)
+            /**
+             * @brief general constructor(move)
+             * @param d data of the new node
+             * @note use move-constructor of type T
+             */
+            explicit TreeNode(U &&d)
                     : data(std::move(d))
             {}
-            TreeNode(TreeNode<U> const &src)                                //copy-constructor
+            /**
+             * @brief copy-constructor
+             * @param src
+             */
+            TreeNode(TreeNode<U> const &src)
                     : data(src.data),parent(src.parent),children(src.children)
             {}
-            TreeNode(TreeNode<U> &&src) noexcept                            //move-constructor
+            /**
+             * @brief move-constructor
+             * @param src
+             */
+            TreeNode(TreeNode<U> &&src) noexcept
                     : data(std::move(src.data)),parent(src.parent),children(std::move(src.children))
             {}
-            TreeNode<U> &operator=(TreeNode<U> const &right)                //copy-assignment
+            /**
+             * @brief copy-assignment
+             * @param right
+             * @return left reference of the node itself
+             */
+            TreeNode<U> &operator=(TreeNode<U> const &right)
             {
                 if(this == &right)
                     return *this;
@@ -46,14 +87,20 @@ namespace Telephone_DS::treeBase::Tree
                 children = right.children;
                 return *this;
             }
-            TreeNode<U> &operator=(TreeNode<U> &&right) noexcept            //move-assignment
+            /**
+             * @brief move-assignment
+             * @param right
+             * @return left reference of the node itself
+             */
+            TreeNode<U> &operator=(TreeNode<U> &&right) noexcept
             {
                 data = std::move(right.data);
                 parent = right.parent;
                 children = std::move(right.children);
                 return *this;
             }
-            virtual ~TreeNode() = default;                                  //destructor
+            /// destructor
+            virtual ~TreeNode() = default;
             virtual auto getChildren() -> linkBase::LinkedList::LinkedList<TreeNode<U>*>
             {   /* Tip:
                  * changing the returned value won't effect the tree node , but the tree node's child
