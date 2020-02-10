@@ -48,7 +48,7 @@ namespace Telephone_DS::arrayBase::Queue    //Telephone写的Queue的命名空�
         {
             return ArrayStorage::ArrayStorage<T>::len();
         }
-        virtual void push(T &x)
+        virtual void push(T const &x)
         {
             ArrayStorage::ArrayStorage<T>::addAfter(ArrayStorage::ArrayStorage<T>::len() - 1 , x);
         }

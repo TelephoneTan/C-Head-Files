@@ -47,7 +47,7 @@ namespace Telephone_DS::arrayBase::Stack    //Telephone写的Stack的命名空�
         {
             return ArrayStorage::ArrayStorage<T>::len();
         }
-        virtual void push(T &x)
+        virtual void push(T const &x)
         {
             ArrayStorage::ArrayStorage<T>::addAfter(ArrayStorage::ArrayStorage<T>::len() - 1 , x);
         }
@@ -62,6 +62,15 @@ namespace Telephone_DS::arrayBase::Stack    //Telephone写的Stack的命名空�
             {
                 ArrayStorage::ArrayStorage<T>::deleteFrom(ArrayStorage::ArrayStorage<T>::len() -
                                                           1 , 1);
+                return 0;
+            }
+            return -1;
+        }
+        virtual int clear()
+        {
+            if(!ArrayStorage::ArrayStorage<T>::isEmpty())
+            {
+                ArrayStorage::ArrayStorage<T>::deleteFrom(0 , ArrayStorage::ArrayStorage<T>::len());
                 return 0;
             }
             return -1;

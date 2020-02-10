@@ -45,7 +45,7 @@ namespace Telephone_DS::linkBase::Queue
         {
             return LinkedList::LinkedList<T>::len();
         }
-        virtual void push(T &x)
+        virtual void push(T const &x)
         {
             LinkedList::LinkedList<T>::addAfter(LinkedList::LinkedList<T>::len() - 1 , x);
         }

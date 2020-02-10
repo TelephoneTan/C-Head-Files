@@ -187,7 +187,7 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
             head = nullptr;
             tail = nullptr;
         }
-        virtual void addBefore(long index , T &x)
+        virtual void addBefore(long index , T const &x)
         {
             if(length == memLen)    //满了或尚未分配空间     //空间分配
             {
@@ -383,7 +383,7 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                 throw std::out_of_range(exp);
             }
         }
-        virtual void addAfter(long index , T &x)
+        virtual void addAfter(long index , T const &x)
         {
             if(length == memLen)    //满了或尚未分配空间     //空间分配
             {

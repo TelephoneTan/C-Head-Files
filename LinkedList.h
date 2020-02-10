@@ -26,7 +26,7 @@ namespace Telephone_DS::linkBase::LinkedList
         }*now = nullptr;              //now指针
     public:
         explicit LinkedList() = default;                            //构造函数
-        LinkedList(LinkedList<T> const &src)                        //拷贝构造函数，不应改变被复制对象
+        LinkedList(LinkedList<T> &src)                        //拷贝构造函数，不应改变被复制对象
         {
             if(this == &src)
                 return;
@@ -214,7 +214,7 @@ namespace Telephone_DS::linkBase::LinkedList
             index = -1;
             now = nullptr;
         }
-        virtual void addBefore(long Index , T &x)
+        virtual void addBefore(long Index , T const &x)
         {
             if(Index >= 0 && Index < length)
             {//如果序号合法
@@ -378,7 +378,7 @@ namespace Telephone_DS::linkBase::LinkedList
                          Index);
             throw std::out_of_range(exp);
         }
-        virtual void addAfter(long Index , T &x)
+        virtual void addAfter(long Index , T const &x)
         {
             if(Index >= 0 && Index < length)
             {//如果序号合法

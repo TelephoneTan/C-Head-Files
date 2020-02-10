@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['removeallchild_80',['removeAllChild',['../class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a530b63efb89f3686557ad8ed3d9dd73c',1,'Telephone_DS::treeBase::Tree::Tree::TreeNode']]],
+  ['removechildofindex_81',['removeChildOfIndex',['../class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a705ce11b43bf1ed63e1995711f4549d1',1,'Telephone_DS::treeBase::Tree::Tree::TreeNode']]],
+  ['removechildrenofdata_82',['removeChildrenOfData',['../class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a1195f3276b94f3c505de854da63e9aee',1,'Telephone_DS::treeBase::Tree::Tree::TreeNode::removeChildrenOfData(U const &amp;value)'],['../class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a30ae7635b137324170a9ea6708bd9252',1,'Telephone_DS::treeBase::Tree::Tree::TreeNode::removeChildrenOfData(U const &amp;value, std::function&lt; int(U const &amp;, U const &amp;)&gt; equal)'],['../class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a23c7c7c42c8dce5d9eea1f21f6dc7d94',1,'Telephone_DS::treeBase::Tree::Tree::TreeNode::removeChildrenOfData(U &amp;value, std::function&lt; int(U &amp;, U &amp;)&gt; equal)']]],
+  ['removefirstchild_83',['removeFirstChild',['../class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#aed88099c7d866fbbe66b3bbe147a44cc',1,'Telephone_DS::treeBase::Tree::Tree::TreeNode']]],
+  ['removelastchild_84',['removeLastChild',['../class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a1ec5b974709181baed9e6cfa9d3b2d8a',1,'Telephone_DS::treeBase::Tree::Tree::TreeNode']]]
+];

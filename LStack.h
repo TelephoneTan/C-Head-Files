@@ -45,7 +45,7 @@ namespace Telephone_DS::linkBase::Stack    //Telephone写的Stack的命名空间
         {
             return LinkedList::LinkedList<T>::len();
         }
-        virtual void push(T &x)
+        virtual void push(T const &x)
         {
             LinkedList::LinkedList<T>::addAfter(LinkedList::LinkedList<T>::len() - 1 , x);
         }
@@ -59,6 +59,15 @@ namespace Telephone_DS::linkBase::Stack    //Telephone写的Stack的命名空间
             if(!LinkedList::LinkedList<T>::isEmpty())
             {
                 LinkedList::LinkedList<T>::deleteFrom(LinkedList::LinkedList<T>::len() - 1 , 1);
+                return 0;
+            }
+            return -1;
+        }
+        virtual int clear()
+        {
+            if(!LinkedList::LinkedList<T>::isEmpty())
+            {
+                LinkedList::LinkedList<T>::deleteFrom(0 , LinkedList::LinkedList<T>::len());
                 return 0;
             }
             return -1;

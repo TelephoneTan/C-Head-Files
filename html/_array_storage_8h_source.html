@@ -254,7 +254,7 @@ $(function() {
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            head = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            tail = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> addBefore(<span class="keywordtype">long</span> index , T &amp;x)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> addBefore(<span class="keywordtype">long</span> index , T <span class="keyword">const</span> &amp;x)</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        {</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="keywordflow">if</span>(length == memLen)    <span class="comment">//满了或尚未分配空间     //空间分配</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            {</div>
@@ -450,7 +450,7 @@ $(function() {
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                <span class="keywordflow">throw</span> std::out_of_range(exp);</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            }</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        }</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> addAfter(<span class="keywordtype">long</span> index , T &amp;x)</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> addAfter(<span class="keywordtype">long</span> index , T <span class="keyword">const</span> &amp;x)</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        {</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keywordflow">if</span>(length == memLen)    <span class="comment">//满了或尚未分配空间     //空间分配</span></div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            {</div>

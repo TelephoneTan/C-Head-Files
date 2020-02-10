@@ -68,7 +68,9 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Telephone_DS::treeBase::Tree::Tree&lt; T &gt;::TreeNode&lt; U &gt; Class Template Reference</div>  </div>
@@ -98,85 +100,96 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a70defb3cbe80d228ad7eeedeb47d0135"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a70defb3cbe80d228ad7eeedeb47d0135">operator=</a> (<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; &amp;&amp;right) noexcept</td></tr>
 <tr class="memdesc:a70defb3cbe80d228ad7eeedeb47d0135"><td class="mdescLeft">&#160;</td><td class="mdescRight">move-assignment  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a70defb3cbe80d228ad7eeedeb47d0135">More...</a><br /></td></tr>
 <tr class="separator:a70defb3cbe80d228ad7eeedeb47d0135"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add18e0b09d8ed7635e7d752283f737d8"><td class="memItemLeft" align="right" valign="top"><a id="add18e0b09d8ed7635e7d752283f737d8"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">~TreeNode</a> ()=default</td></tr>
-<tr class="memdesc:add18e0b09d8ed7635e7d752283f737d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructor <br /></td></tr>
+<tr class="memitem:add18e0b09d8ed7635e7d752283f737d8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">~TreeNode</a> ()=default</td></tr>
+<tr class="memdesc:add18e0b09d8ed7635e7d752283f737d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructor  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">More...</a><br /></td></tr>
 <tr class="separator:add18e0b09d8ed7635e7d752283f737d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45ca701ece0327ed6ed3db470caad8af"><td class="memItemLeft" align="right" valign="top"><a id="a45ca701ece0327ed6ed3db470caad8af"></a>
-virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>getChildren</b> () -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; * &gt;</td></tr>
+<tr class="memitem:a45ca701ece0327ed6ed3db470caad8af"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a45ca701ece0327ed6ed3db470caad8af">getChildren</a> () -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; * &gt;</td></tr>
+<tr class="memdesc:a45ca701ece0327ed6ed3db470caad8af"><td class="mdescLeft">&#160;</td><td class="mdescRight">get child nodes  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a45ca701ece0327ed6ed3db470caad8af">More...</a><br /></td></tr>
 <tr class="separator:a45ca701ece0327ed6ed3db470caad8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace6ffa7b6d2287ed36fd8c1409be5183"><td class="memItemLeft" align="right" valign="top"><a id="ace6ffa7b6d2287ed36fd8c1409be5183"></a>
-virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>getChildrenOfData</b> (U const &amp;value) -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; * &gt;</td></tr>
+<tr class="memitem:a1fc36e25f848c59622899d0e6169591b"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a1fc36e25f848c59622899d0e6169591b">getFirstChild</a> () -&gt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; *</td></tr>
+<tr class="memdesc:a1fc36e25f848c59622899d0e6169591b"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the first child node in the child-nodes list  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a1fc36e25f848c59622899d0e6169591b">More...</a><br /></td></tr>
+<tr class="separator:a1fc36e25f848c59622899d0e6169591b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1429bab46ccd0783c4e15e4e70748875"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a1429bab46ccd0783c4e15e4e70748875">getLastChild</a> () -&gt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; *</td></tr>
+<tr class="memdesc:a1429bab46ccd0783c4e15e4e70748875"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the last child node in the child-nodes list  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a1429bab46ccd0783c4e15e4e70748875">More...</a><br /></td></tr>
+<tr class="separator:a1429bab46ccd0783c4e15e4e70748875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6ffa7b6d2287ed36fd8c1409be5183"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#ace6ffa7b6d2287ed36fd8c1409be5183">getChildrenOfData</a> (U const &amp;value) -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; * &gt;</td></tr>
+<tr class="memdesc:ace6ffa7b6d2287ed36fd8c1409be5183"><td class="mdescLeft">&#160;</td><td class="mdescRight">traverse current node's child-nodes list and then get child nodes containing the specified data  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#ace6ffa7b6d2287ed36fd8c1409be5183">More...</a><br /></td></tr>
 <tr class="separator:ace6ffa7b6d2287ed36fd8c1409be5183"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cc4831a0a5b3e4ea71a69043d69c88f"><td class="memItemLeft" align="right" valign="top"><a id="a8cc4831a0a5b3e4ea71a69043d69c88f"></a>
-virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>getParent</b> () -&gt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; *</td></tr>
+<tr class="memitem:a3a8624b1a59470873d39f4fa7c9904f4"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a3a8624b1a59470873d39f4fa7c9904f4">getChildrenIndexOfData</a> (U const &amp;value) -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; int &gt;</td></tr>
+<tr class="memdesc:a3a8624b1a59470873d39f4fa7c9904f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">traverse current node's child-nodes list and then get indexes of child nodes containing the specified data  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a3a8624b1a59470873d39f4fa7c9904f4">More...</a><br /></td></tr>
+<tr class="separator:a3a8624b1a59470873d39f4fa7c9904f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1310194e27c83ccae22b0d3ba040105"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#ad1310194e27c83ccae22b0d3ba040105">getChildrenOfData</a> (U const &amp;value, std::function&lt; int(U const &amp;, U const &amp;)&gt; equal) -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; * &gt;</td></tr>
+<tr class="memdesc:ad1310194e27c83ccae22b0d3ba040105"><td class="mdescLeft">&#160;</td><td class="mdescRight">traverse current node's child-nodes list and then get child nodes containing the specified data  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#ad1310194e27c83ccae22b0d3ba040105">More...</a><br /></td></tr>
+<tr class="separator:ad1310194e27c83ccae22b0d3ba040105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cf39f186bb95698030aac11b236ef12"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a6cf39f186bb95698030aac11b236ef12">getChildrenIndexOfData</a> (U const &amp;value, std::function&lt; int(U const &amp;, U const &amp;)&gt; equal) -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; int &gt;</td></tr>
+<tr class="memdesc:a6cf39f186bb95698030aac11b236ef12"><td class="mdescLeft">&#160;</td><td class="mdescRight">traverse current node's child-nodes list and then get indexes of child nodes containing the specified data  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a6cf39f186bb95698030aac11b236ef12">More...</a><br /></td></tr>
+<tr class="separator:a6cf39f186bb95698030aac11b236ef12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee156c0aee9ccafd51b2b1ba2d0bbb59"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#aee156c0aee9ccafd51b2b1ba2d0bbb59">getChildrenOfData</a> (U &amp;value, std::function&lt; int(U &amp;, U &amp;)&gt; equal) -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; * &gt;</td></tr>
+<tr class="memdesc:aee156c0aee9ccafd51b2b1ba2d0bbb59"><td class="mdescLeft">&#160;</td><td class="mdescRight">traverse current node's child-nodes list and then get child nodes containing the specified data  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#aee156c0aee9ccafd51b2b1ba2d0bbb59">More...</a><br /></td></tr>
+<tr class="separator:aee156c0aee9ccafd51b2b1ba2d0bbb59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6775319e14b41a1e0f9a7dcadd6c0552"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a6775319e14b41a1e0f9a7dcadd6c0552">getChildrenIndexOfData</a> (U &amp;value, std::function&lt; int(U &amp;, U &amp;)&gt; equal) -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; int &gt;</td></tr>
+<tr class="memdesc:a6775319e14b41a1e0f9a7dcadd6c0552"><td class="mdescLeft">&#160;</td><td class="mdescRight">traverse current node's child-nodes list and then get indexes of child nodes containing the specified data  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a6775319e14b41a1e0f9a7dcadd6c0552">More...</a><br /></td></tr>
+<tr class="separator:a6775319e14b41a1e0f9a7dcadd6c0552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cc4831a0a5b3e4ea71a69043d69c88f"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a8cc4831a0a5b3e4ea71a69043d69c88f">getParent</a> () -&gt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; *</td></tr>
+<tr class="memdesc:a8cc4831a0a5b3e4ea71a69043d69c88f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get parent node  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a8cc4831a0a5b3e4ea71a69043d69c88f">More...</a><br /></td></tr>
 <tr class="separator:a8cc4831a0a5b3e4ea71a69043d69c88f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6ed1f7475e9ea4a677aaecdb7c6811e"><td class="memItemLeft" align="right" valign="top"><a id="ad6ed1f7475e9ea4a677aaecdb7c6811e"></a>
-virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>getChildOfIndex</b> (int index) -&gt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; *</td></tr>
+<tr class="memitem:ad6ed1f7475e9ea4a677aaecdb7c6811e"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#ad6ed1f7475e9ea4a677aaecdb7c6811e">getChildOfIndex</a> (int index) -&gt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; *</td></tr>
+<tr class="memdesc:ad6ed1f7475e9ea4a677aaecdb7c6811e"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the child node of specified index in the child-nodes list  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#ad6ed1f7475e9ea4a677aaecdb7c6811e">More...</a><br /></td></tr>
 <tr class="separator:ad6ed1f7475e9ea4a677aaecdb7c6811e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab69588ebdedeadc48f2e37697a294be8"><td class="memItemLeft" align="right" valign="top"><a id="ab69588ebdedeadc48f2e37697a294be8"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>addChild</b> (<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; const &amp;node)</td></tr>
-<tr class="separator:ab69588ebdedeadc48f2e37697a294be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7135415447628bdf21b2a85fd9642d98"><td class="memItemLeft" align="right" valign="top"><a id="a7135415447628bdf21b2a85fd9642d98"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>addChildWithData</b> (U const &amp;dat)</td></tr>
-<tr class="separator:a7135415447628bdf21b2a85fd9642d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28666687fd6d5540c29721f47730c931"><td class="memItemLeft" align="right" valign="top"><a id="a28666687fd6d5540c29721f47730c931"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>addChildWithData</b> (U &amp;&amp;dat)</td></tr>
-<tr class="separator:a28666687fd6d5540c29721f47730c931"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af335fd3b6ec7f6dceaae89bd1722a587"><td class="memItemLeft" align="right" valign="top"><a id="af335fd3b6ec7f6dceaae89bd1722a587"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>insertChildBefore</b> (int index, <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; const &amp;node)</td></tr>
-<tr class="separator:af335fd3b6ec7f6dceaae89bd1722a587"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45b103194e1b013ffbb5eb7b5a7675ba"><td class="memItemLeft" align="right" valign="top"><a id="a45b103194e1b013ffbb5eb7b5a7675ba"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>childNum</b> ()</td></tr>
+<tr class="memitem:a45b103194e1b013ffbb5eb7b5a7675ba"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a45b103194e1b013ffbb5eb7b5a7675ba">childNum</a> ()</td></tr>
+<tr class="memdesc:a45b103194e1b013ffbb5eb7b5a7675ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of child nodes  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a45b103194e1b013ffbb5eb7b5a7675ba">More...</a><br /></td></tr>
 <tr class="separator:a45b103194e1b013ffbb5eb7b5a7675ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed88099c7d866fbbe66b3bbe147a44cc"><td class="memItemLeft" align="right" valign="top"><a id="aed88099c7d866fbbe66b3bbe147a44cc"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>removeFirstChild</b> ()</td></tr>
-<tr class="separator:aed88099c7d866fbbe66b3bbe147a44cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ec5b974709181baed9e6cfa9d3b2d8a"><td class="memItemLeft" align="right" valign="top"><a id="a1ec5b974709181baed9e6cfa9d3b2d8a"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>removeLastChild</b> ()</td></tr>
-<tr class="separator:a1ec5b974709181baed9e6cfa9d3b2d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a705ce11b43bf1ed63e1995711f4549d1"><td class="memItemLeft" align="right" valign="top"><a id="a705ce11b43bf1ed63e1995711f4549d1"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>removeChildOfIndex</b> (int index)</td></tr>
-<tr class="separator:a705ce11b43bf1ed63e1995711f4549d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fa1c1f3a8117c791183217a3acee269"><td class="memItemLeft" align="right" valign="top"><a id="a8fa1c1f3a8117c791183217a3acee269"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>removeChildOfData</b> (U const &amp;value)</td></tr>
-<tr class="separator:a8fa1c1f3a8117c791183217a3acee269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74ae39bcaaa32633e2c93640f4bafe7f"><td class="memItemLeft" align="right" valign="top"><a id="a74ae39bcaaa32633e2c93640f4bafe7f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>removeAllChild</b> ()</td></tr>
-<tr class="separator:a74ae39bcaaa32633e2c93640f4bafe7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba31cd4c60d50e4fee82ed7bdd4b7fe1"><td class="memItemLeft" align="right" valign="top"><a id="aba31cd4c60d50e4fee82ed7bdd4b7fe1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setParent</b> (<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; const &amp;node)</td></tr>
-<tr class="separator:aba31cd4c60d50e4fee82ed7bdd4b7fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa989cb4245270e08ee877082d5677a1e"><td class="memItemLeft" align="right" valign="top"><a id="aa989cb4245270e08ee877082d5677a1e"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>setChildOfIndex</b> (int index, <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; const &amp;node)</td></tr>
-<tr class="separator:aa989cb4245270e08ee877082d5677a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d4169d3e125dc677187a87777efddb6"><td class="memItemLeft" align="right" valign="top"><a id="a9d4169d3e125dc677187a87777efddb6"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>setFirstChild</b> (<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; const &amp;node)</td></tr>
-<tr class="separator:a9d4169d3e125dc677187a87777efddb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1a967cd1f905ef933977feef4439e60"><td class="memItemLeft" align="right" valign="top"><a id="ac1a967cd1f905ef933977feef4439e60"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>setLastChild</b> (<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; const &amp;node)</td></tr>
-<tr class="separator:ac1a967cd1f905ef933977feef4439e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10d192295d250a2e8c28637a8fc3c567"><td class="memItemLeft" align="right" valign="top"><a id="a10d192295d250a2e8c28637a8fc3c567"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setChildrenList</b> (<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; const &amp;node)</td></tr>
-<tr class="separator:a10d192295d250a2e8c28637a8fc3c567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af42e93611eab00ff33b6696da5379313"><td class="memItemLeft" align="right" valign="top"><a id="af42e93611eab00ff33b6696da5379313"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setChildrenList</b> (<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; &amp;&amp;node)</td></tr>
-<tr class="separator:af42e93611eab00ff33b6696da5379313"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a95ed720428bb48b8720a433461a563"><td class="memItemLeft" align="right" valign="top"><a id="a9a95ed720428bb48b8720a433461a563"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>depth</b> ()</td></tr>
-<tr class="separator:a9a95ed720428bb48b8720a433461a563"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e478403bada9fe33fbb2e48bbe6026f"><td class="memItemLeft" align="right" valign="top"><a id="a9e478403bada9fe33fbb2e48bbe6026f"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>height</b> ()</td></tr>
-<tr class="separator:a9e478403bada9fe33fbb2e48bbe6026f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dff81173958641e59f818940a7ebf77"><td class="memItemLeft" align="right" valign="top"><a id="a7dff81173958641e59f818940a7ebf77"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>isLeaf</b> ()</td></tr>
+<tr class="memitem:a7dff81173958641e59f818940a7ebf77"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a7dff81173958641e59f818940a7ebf77">isLeaf</a> ()</td></tr>
+<tr class="memdesc:a7dff81173958641e59f818940a7ebf77"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether current node is a leaf-node  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a7dff81173958641e59f818940a7ebf77">More...</a><br /></td></tr>
 <tr class="separator:a7dff81173958641e59f818940a7ebf77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a959c54923e42b729a0efe756ed801894"><td class="memItemLeft" align="right" valign="top"><a id="a959c54923e42b729a0efe756ed801894"></a>
-virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>getLeafNodes</b> () -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; * &gt;</td></tr>
+<tr class="memitem:a959c54923e42b729a0efe756ed801894"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a959c54923e42b729a0efe756ed801894">getLeafNodes</a> () -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; * &gt;</td></tr>
+<tr class="memdesc:a959c54923e42b729a0efe756ed801894"><td class="mdescLeft">&#160;</td><td class="mdescRight">get all leaf-nodes of current node  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a959c54923e42b729a0efe756ed801894">More...</a><br /></td></tr>
 <tr class="separator:a959c54923e42b729a0efe756ed801894"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8425d5f80ac2521e99c84229e78218ae"><td class="memItemLeft" align="right" valign="top"><a id="a8425d5f80ac2521e99c84229e78218ae"></a>
-virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>getAllNodes</b> () -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; * &gt;</td></tr>
+<tr class="memitem:a8425d5f80ac2521e99c84229e78218ae"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a8425d5f80ac2521e99c84229e78218ae">getAllNodes</a> () -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; * &gt;</td></tr>
+<tr class="memdesc:a8425d5f80ac2521e99c84229e78218ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">get current node and all recursive child nodes of current node  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a8425d5f80ac2521e99c84229e78218ae">More...</a><br /></td></tr>
 <tr class="separator:a8425d5f80ac2521e99c84229e78218ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7135415447628bdf21b2a85fd9642d98"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a7135415447628bdf21b2a85fd9642d98">addChildWithData</a> (U const &amp;dat)</td></tr>
+<tr class="memdesc:a7135415447628bdf21b2a85fd9642d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new node with specified data and then add a pointer to the new node to the end of the child-nodes list  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a7135415447628bdf21b2a85fd9642d98">More...</a><br /></td></tr>
+<tr class="separator:a7135415447628bdf21b2a85fd9642d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28666687fd6d5540c29721f47730c931"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a28666687fd6d5540c29721f47730c931">addChildWithData</a> (U &amp;&amp;dat)</td></tr>
+<tr class="memdesc:a28666687fd6d5540c29721f47730c931"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new node with specified data and then add a pointer to the new node to the end of the child-nodes list  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a28666687fd6d5540c29721f47730c931">More...</a><br /></td></tr>
+<tr class="separator:a28666687fd6d5540c29721f47730c931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46866956f93ba261101c9c6261c2fca6"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a46866956f93ba261101c9c6261c2fca6">insertChildBeforeWithData</a> (int index, U const &amp;dat)</td></tr>
+<tr class="memdesc:a46866956f93ba261101c9c6261c2fca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new node with specified data and then insert a pointer to it before the node of specified index in the child-nodes list  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a46866956f93ba261101c9c6261c2fca6">More...</a><br /></td></tr>
+<tr class="separator:a46866956f93ba261101c9c6261c2fca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa50b3ab2a6705a6ba0c8499a3cff0fe3"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#aa50b3ab2a6705a6ba0c8499a3cff0fe3">insertChildBeforeWithData</a> (int index, U &amp;&amp;dat)</td></tr>
+<tr class="memdesc:aa50b3ab2a6705a6ba0c8499a3cff0fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new node with specified data and then insert a pointer to it before the node of specified index in the child-nodes list  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#aa50b3ab2a6705a6ba0c8499a3cff0fe3">More...</a><br /></td></tr>
+<tr class="separator:aa50b3ab2a6705a6ba0c8499a3cff0fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a189ef2a9277ae9a54d6cd0087d95e9b6"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a189ef2a9277ae9a54d6cd0087d95e9b6">insertChildAfterWithData</a> (int index, U const &amp;dat)</td></tr>
+<tr class="memdesc:a189ef2a9277ae9a54d6cd0087d95e9b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new node with specified data and then insert a pointer to it after the node of specified index in the child-nodes list  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a189ef2a9277ae9a54d6cd0087d95e9b6">More...</a><br /></td></tr>
+<tr class="separator:a189ef2a9277ae9a54d6cd0087d95e9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b7a84ee4620e37cf5ff4c3a55871c18"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a8b7a84ee4620e37cf5ff4c3a55871c18">insertChildAfterWithData</a> (int index, U &amp;&amp;dat)</td></tr>
+<tr class="memdesc:a8b7a84ee4620e37cf5ff4c3a55871c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new node with specified data and then insert a pointer to it after the node of specified index in the child-nodes list  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a8b7a84ee4620e37cf5ff4c3a55871c18">More...</a><br /></td></tr>
+<tr class="separator:a8b7a84ee4620e37cf5ff4c3a55871c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed88099c7d866fbbe66b3bbe147a44cc"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#aed88099c7d866fbbe66b3bbe147a44cc">removeFirstChild</a> ()</td></tr>
+<tr class="memdesc:aed88099c7d866fbbe66b3bbe147a44cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove the first node in the child-nodes list , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of the first child-node  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#aed88099c7d866fbbe66b3bbe147a44cc">More...</a><br /></td></tr>
+<tr class="separator:aed88099c7d866fbbe66b3bbe147a44cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec5b974709181baed9e6cfa9d3b2d8a"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a1ec5b974709181baed9e6cfa9d3b2d8a">removeLastChild</a> ()</td></tr>
+<tr class="memdesc:a1ec5b974709181baed9e6cfa9d3b2d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove the last node in the child-nodes list , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of the last child-node  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a1ec5b974709181baed9e6cfa9d3b2d8a">More...</a><br /></td></tr>
+<tr class="separator:a1ec5b974709181baed9e6cfa9d3b2d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a705ce11b43bf1ed63e1995711f4549d1"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a705ce11b43bf1ed63e1995711f4549d1">removeChildOfIndex</a> (int index)</td></tr>
+<tr class="memdesc:a705ce11b43bf1ed63e1995711f4549d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove the node of specified index in the child-nodes list , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of the specified child-node  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a705ce11b43bf1ed63e1995711f4549d1">More...</a><br /></td></tr>
+<tr class="separator:a705ce11b43bf1ed63e1995711f4549d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1195f3276b94f3c505de854da63e9aee"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a1195f3276b94f3c505de854da63e9aee">removeChildrenOfData</a> (U const &amp;value)</td></tr>
+<tr class="memdesc:a1195f3276b94f3c505de854da63e9aee"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove those child nodes containing the specified data , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of them  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a1195f3276b94f3c505de854da63e9aee">More...</a><br /></td></tr>
+<tr class="separator:a1195f3276b94f3c505de854da63e9aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30ae7635b137324170a9ea6708bd9252"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a30ae7635b137324170a9ea6708bd9252">removeChildrenOfData</a> (U const &amp;value, std::function&lt; int(U const &amp;, U const &amp;)&gt; equal)</td></tr>
+<tr class="memdesc:a30ae7635b137324170a9ea6708bd9252"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove those child nodes containing the specified data , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of them  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a30ae7635b137324170a9ea6708bd9252">More...</a><br /></td></tr>
+<tr class="separator:a30ae7635b137324170a9ea6708bd9252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c7c7c42c8dce5d9eea1f21f6dc7d94"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a23c7c7c42c8dce5d9eea1f21f6dc7d94">removeChildrenOfData</a> (U &amp;value, std::function&lt; int(U &amp;, U &amp;)&gt; equal)</td></tr>
+<tr class="memdesc:a23c7c7c42c8dce5d9eea1f21f6dc7d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove those child nodes containing the specified data , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of them  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a23c7c7c42c8dce5d9eea1f21f6dc7d94">More...</a><br /></td></tr>
+<tr class="separator:a23c7c7c42c8dce5d9eea1f21f6dc7d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a530b63efb89f3686557ad8ed3d9dd73c"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a530b63efb89f3686557ad8ed3d9dd73c">removeAllChild</a> ()</td></tr>
+<tr class="memdesc:a530b63efb89f3686557ad8ed3d9dd73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove all child nodes , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of them  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a530b63efb89f3686557ad8ed3d9dd73c">More...</a><br /></td></tr>
+<tr class="separator:a530b63efb89f3686557ad8ed3d9dd73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8eddbdb0cd98c2479dddd6947ad4f8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#acc8eddbdb0cd98c2479dddd6947ad4f8">traverseAsTree</a> (std::function&lt; void(<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; &amp;, int, int)&gt; doSomething)</td></tr>
+<tr class="memdesc:acc8eddbdb0cd98c2479dddd6947ad4f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">take current node as a tree-root-node , traverse the tree by rows(include the root-node)  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#acc8eddbdb0cd98c2479dddd6947ad4f8">More...</a><br /></td></tr>
+<tr class="separator:acc8eddbdb0cd98c2479dddd6947ad4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -184,6 +197,18 @@ Public Attributes</h2></td></tr>
 U&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a56117e02cf1da4763dbc3da1164d92c3">data</a></td></tr>
 <tr class="memdesc:a56117e02cf1da4763dbc3da1164d92c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">data of tree-node <br /></td></tr>
 <tr class="separator:a56117e02cf1da4763dbc3da1164d92c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aea5555f74503587b5174f8deffd6a5fc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#aea5555f74503587b5174f8deffd6a5fc">setParent</a> (<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; &amp;node)</td></tr>
+<tr class="memdesc:aea5555f74503587b5174f8deffd6a5fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the parent node of current node to the specified node  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#aea5555f74503587b5174f8deffd6a5fc">More...</a><br /></td></tr>
+<tr class="separator:aea5555f74503587b5174f8deffd6a5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a95ed720428bb48b8720a433461a563"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a9a95ed720428bb48b8720a433461a563">depth</a> ()</td></tr>
+<tr class="memdesc:a9a95ed720428bb48b8720a433461a563"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the depth of current node(the root-depth is 0)  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a9a95ed720428bb48b8720a433461a563">More...</a><br /></td></tr>
+<tr class="separator:a9a95ed720428bb48b8720a433461a563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e478403bada9fe33fbb2e48bbe6026f"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a9e478403bada9fe33fbb2e48bbe6026f">height</a> ()</td></tr>
+<tr class="memdesc:a9e478403bada9fe33fbb2e48bbe6026f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the height of current node(every leaf-node has a height of 0)  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a9e478403bada9fe33fbb2e48bbe6026f">More...</a><br /></td></tr>
+<tr class="separator:a9e478403bada9fe33fbb2e48bbe6026f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -193,6 +218,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a729b1ff10f00024a1e245027d91b3111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace045950b90d13e9df7144a162e8f13c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#ace045950b90d13e9df7144a162e8f13c">children</a></td></tr>
 <tr class="separator:ace045950b90d13e9df7144a162e8f13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a4b682814d14447120dd184fd300deade"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a4b682814d14447120dd184fd300deade">Tree</a></td></tr>
+<tr class="memdesc:a4b682814d14447120dd184fd300deade"><td class="mdescLeft">&#160;</td><td class="mdescRight">you can access the private member function of class <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode </a> in class <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Tree </a>  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a4b682814d14447120dd184fd300deade">More...</a><br /></td></tr>
+<tr class="separator:a4b682814d14447120dd184fd300deade"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -208,7 +239,7 @@ class Telephone_DS::treeBase::Tree::Tree&lt; T &gt;::TreeNode&lt; U &gt;</h3>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>this is a private class defined in class <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html" title="common tree">Tree</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00032">32</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00033">33</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a51833e7c295f72565b822b9ab445ac05"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51833e7c295f72565b822b9ab445ac05">&#9670;&nbsp;</a></span>TreeNode() <span class="overload">[1/4]</span></h2>
@@ -245,12 +276,16 @@ template&lt;typename U &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>use copy-constructor of type T </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>use copy-constructor of type U to copy the data to the new node </dd></dl>
+<dl class="section user"><dt>init</dt><dd><ul>
+<li>parent = nullptr</li>
+<li>data = specified data</li>
+<li>child-nodes list = empty </li>
+</ul>
+</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00051">51</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    : <a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a56117e02cf1da4763dbc3da1164d92c3">data</a>(d)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            {}</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00056">56</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
 </div>
 </div>
 <a id="a87bb67aeff6e25aab6de88853687a73e"></a>
@@ -288,12 +323,16 @@ template&lt;typename U &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>use move-constructor of type T </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>use move-constructor of type U to move the data to the new node </dd></dl>
+<dl class="section user"><dt>init</dt><dd><ul>
+<li>parent = nullptr</li>
+<li>data = specified data</li>
+<li>child-nodes list = empty </li>
+</ul>
+</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00059">59</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    : <a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a56117e02cf1da4763dbc3da1164d92c3">data</a>(std::move(d))</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            {}</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00068">68</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
 </div>
 </div>
 <a id="a091fdd1289c89f35edea78d3f6a630dd"></a>
@@ -331,11 +370,11 @@ template&lt;typename U &gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>use copy-constructor of type U and child-nodes <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list </a> to copy data and child-nodes list from the node passed in by parameter </dd></dl>
+<dl class="section user"><dt>Result:</dt><dd>current node will have the same data, parent pointer and child-nodes list as the node passed in by parameter </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00066">66</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    : <a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a56117e02cf1da4763dbc3da1164d92c3">data</a>(src.data),<a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a729b1ff10f00024a1e245027d91b3111">parent</a>(src.parent),<a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#ace045950b90d13e9df7144a162e8f13c">children</a>(src.children)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            {}</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00081">81</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
 </div>
 </div>
 <a id="a56f00618791cf058599e0bb58760c15f"></a>
@@ -373,14 +412,1127 @@ template&lt;typename U &gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>use move-constructor of type U and child-nodes <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list </a> to move data and child-nodes list from the node passed in by parameter </dd></dl>
+<dl class="section user"><dt>Result:</dt><dd>current node will have the same data, parent pointer and child-nodes list as the node passed in by parameter </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00073">73</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    : <a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a56117e02cf1da4763dbc3da1164d92c3">data</a>(std::move(src.data)),<a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a729b1ff10f00024a1e245027d91b3111">parent</a>(src.parent),<a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#ace045950b90d13e9df7144a162e8f13c">children</a>(std::move(src.children))</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            {}</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00094">94</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="add18e0b09d8ed7635e7d752283f737d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add18e0b09d8ed7635e7d752283f737d8">&#9670;&nbsp;</a></span>~TreeNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::~<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>destructor </p>
+<dl class="section note"><dt>Note</dt><dd>this function will only do two things:<ol type="1">
+<li>call the destructor of data</li>
+<li>call the destructor of child-nodes list </li>
+</ol>
+</dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a28666687fd6d5540c29721f47730c931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28666687fd6d5540c29721f47730c931">&#9670;&nbsp;</a></span>addChildWithData() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::addChildWithData </td>
+          <td>(</td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
+          <td class="paramname"><em>dat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create a new node with specified data and then add a pointer to the new node to the end of the child-nodes list </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dat</td><td>specified data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>use move-constructor of type T to move the data to the new node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00549">549</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a7135415447628bdf21b2a85fd9642d98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7135415447628bdf21b2a85fd9642d98">&#9670;&nbsp;</a></span>addChildWithData() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::addChildWithData </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>dat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create a new node with specified data and then add a pointer to the new node to the end of the child-nodes list </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dat</td><td>specified data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>use copy-constructor of type T to copy the data to the new node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00538">538</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a45b103194e1b013ffbb5eb7b5a7675ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45b103194e1b013ffbb5eb7b5a7675ba">&#9670;&nbsp;</a></span>childNum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::childNum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the number of child nodes </p>
+<dl class="section return"><dt>Returns</dt><dd>the number of child nodes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00435">435</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a9a95ed720428bb48b8720a433461a563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a95ed720428bb48b8720a433461a563">&#9670;&nbsp;</a></span>depth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::depth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the depth of current node(the root-depth is 0) </p>
+<dl class="section return"><dt>Returns</dt><dd>the depth of current node(the root-depth is 0) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00907">907</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a8425d5f80ac2521e99c84229e78218ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8425d5f80ac2521e99c84229e78218ae">&#9670;&nbsp;</a></span>getAllNodes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getAllNodes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a> &lt;<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt;U&gt;*&gt;
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get current node and all recursive child nodes of current node </p>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list</a> of pointers to current node and each recursive child nodes of current node </dd></dl>
+<dl class="section user"><dt>Order:</dt><dd>take current node as a tree-root-node , and then place this tree in this way: <ol>
+<li>
+root-up </li>
+<li>
+among all the child nodes of a node , the child node with least index in the child-nodes list placed in the far left </li>
+</ol>
+in this case , the order of the nodes in the returned list is: up-to-down and left-to-right </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00509">509</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="ad6ed1f7475e9ea4a677aaecdb7c6811e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6ed1f7475e9ea4a677aaecdb7c6811e">&#9670;&nbsp;</a></span>getChildOfIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getChildOfIndex </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt;U&gt;*
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the child node of specified index in the child-nodes list </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>if the index exists , return a nonnull pointer to the specified node;</li>
+<li>or else , return nullptr </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00422">422</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a45ca701ece0327ed6ed3db470caad8af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45ca701ece0327ed6ed3db470caad8af">&#9670;&nbsp;</a></span>getChildren()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getChildren </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt;<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt;U&gt;*&gt;
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get child nodes </p>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list</a> of pointers to child nodes </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>changing the returned list won't actually effect the child-nodes list in current node , but the child nodes of current node can be effected through the pointers in the returned list </dd></dl>
+<dl class="section user"><dt>Order:</dt><dd>the returned list is tha same as the child-nodes list </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00152">152</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a6775319e14b41a1e0f9a7dcadd6c0552"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6775319e14b41a1e0f9a7dcadd6c0552">&#9670;&nbsp;</a></span>getChildrenIndexOfData() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getChildrenIndexOfData </td>
+          <td>(</td>
+          <td class="paramtype">U &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; int(U &amp;, U &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt;int&gt;
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>traverse current node's child-nodes list and then get indexes of child nodes containing the specified data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the specified data </td></tr>
+    <tr><td class="paramname">equal</td><td>function to judge whether one data is equal to another , which will change the data objects to be compared </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list</a> of indexes of child nodes containing the specified data </dd></dl>
+<dl class="section user"><dt>How to compare:</dt><dd>call a function using the callable object passed in by the parameter to compare whether the data part of each child node is equal to the specified data:<ul>
+<li>if equal , the function should return 1</li>
+<li>if not equal , the function should return 0</li>
+<li>the function should have two formal parameters , the first one is a lvalue reference bound to type U which means one data object , the second one is a lvalue reference bound to type U which means another data object </li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt>Order:</dt><dd>the returned list is consistent with the child-nodes list in sequential order of nodes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00391">391</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a3a8624b1a59470873d39f4fa7c9904f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a8624b1a59470873d39f4fa7c9904f4">&#9670;&nbsp;</a></span>getChildrenIndexOfData() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getChildrenIndexOfData </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt;int&gt;
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>traverse current node's child-nodes list and then get indexes of child nodes containing the specified data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the specified data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list</a> of indexes of child nodes containing the specified data </dd></dl>
+<dl class="section user"><dt>How to compare:</dt><dd><ul>
+<li>if the type of node's data part is floating-point(float , double , long double) number , use floating-point error (1e-6);</li>
+<li>or else , use operator == </li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt>Order:</dt><dd>the returned list is consistent with the child-nodes list in sequential order of nodes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00242">242</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a6cf39f186bb95698030aac11b236ef12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cf39f186bb95698030aac11b236ef12">&#9670;&nbsp;</a></span>getChildrenIndexOfData() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getChildrenIndexOfData </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; int(U const &amp;, U const &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt;int&gt;
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>traverse current node's child-nodes list and then get indexes of child nodes containing the specified data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the specified data </td></tr>
+    <tr><td class="paramname">equal</td><td>function to judge whether one data is equal to another , which won't change the data objects to be compared </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list</a> of indexes of child nodes containing the specified data </dd></dl>
+<dl class="section user"><dt>How to compare:</dt><dd>call a function using the callable object passed in by the parameter to compare whether the data part of each child node is equal to the specified data:<ul>
+<li>if equal , the function should return 1</li>
+<li>if not equal , the function should return 0</li>
+<li>the function should have two formal parameters , the first one is a const lvalue reference bound to type U which means one data object , the second one is a const lvalue reference bound to type U which means another data object </li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt>Order:</dt><dd>the returned list is consistent with the child-nodes list in sequential order of nodes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00323">323</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="aee156c0aee9ccafd51b2b1ba2d0bbb59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee156c0aee9ccafd51b2b1ba2d0bbb59">&#9670;&nbsp;</a></span>getChildrenOfData() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getChildrenOfData </td>
+          <td>(</td>
+          <td class="paramtype">U &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; int(U &amp;, U &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt;<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt;U&gt;*&gt;
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>traverse current node's child-nodes list and then get child nodes containing the specified data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the specified data </td></tr>
+    <tr><td class="paramname">equal</td><td>function to judge whether one data is equal to another , which will change the data objects to be compared </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list</a> of pointers to child nodes containing the specified data </dd></dl>
+<dl class="section user"><dt>How to compare:</dt><dd>call a function using the callable object passed in by the parameter to compare whether the data part of each child node is equal to the specified data:<ul>
+<li>if equal , the function should return 1</li>
+<li>if not equal , the function should return 0</li>
+<li>the function should have two formal parameters , the first one is a lvalue reference bound to type U which means one data object , the second one is a lvalue reference bound to type U which means another data object </li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt>Order:</dt><dd>the returned list is consistent with the child-nodes list in sequential order of nodes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00357">357</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="ace6ffa7b6d2287ed36fd8c1409be5183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace6ffa7b6d2287ed36fd8c1409be5183">&#9670;&nbsp;</a></span>getChildrenOfData() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getChildrenOfData </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt;<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt;U&gt;*&gt;
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>traverse current node's child-nodes list and then get child nodes containing the specified data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the specified data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list</a> of pointers to child nodes containing the specified data </dd></dl>
+<dl class="section user"><dt>How to compare:</dt><dd><ul>
+<li>if the type of node's data part is floating-point(float , double , long double) number , use floating-point error (1e-6);</li>
+<li>or else , use operator == </li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt>Order:</dt><dd>the returned list is consistent with the child-nodes list in sequential order of nodes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00200">200</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="ad1310194e27c83ccae22b0d3ba040105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1310194e27c83ccae22b0d3ba040105">&#9670;&nbsp;</a></span>getChildrenOfData() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getChildrenOfData </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; int(U const &amp;, U const &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a>&lt;<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt;U&gt;*&gt;
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>traverse current node's child-nodes list and then get child nodes containing the specified data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the specified data </td></tr>
+    <tr><td class="paramname">equal</td><td>function to judge whether one data is equal to another , which won't change the data objects to be compared </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list</a> of pointers to child nodes containing the specified data </dd></dl>
+<dl class="section user"><dt>How to compare:</dt><dd>call a function using the callable object passed in by the parameter to compare whether the data part of each child node is equal to the specified data:<ul>
+<li>if equal , the function should return 1</li>
+<li>if not equal , the function should return 0</li>
+<li>the function should have two formal parameters , the first one is a const lvalue reference bound to type U which means one data object , the second one is a const lvalue reference bound to type U which means another data object </li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt>Order:</dt><dd>the returned list is consistent with the child-nodes list in sequential order of nodes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00288">288</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a1fc36e25f848c59622899d0e6169591b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fc36e25f848c59622899d0e6169591b">&#9670;&nbsp;</a></span>getFirstChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getFirstChild </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt;U&gt;*
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the first child node in the child-nodes list </p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>if the child-nodes list is not empty , return a pointer to the first child node in the child-nodes list;</li>
+<li>or else , return nullptr </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00163">163</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a1429bab46ccd0783c4e15e4e70748875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1429bab46ccd0783c4e15e4e70748875">&#9670;&nbsp;</a></span>getLastChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getLastChild </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt;U&gt;*
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the last child node in the child-nodes list </p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>if the child-nodes list is not empty , return a pointer to the last child node in the child-nodes list;</li>
+<li>or else , return nullptr </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00178">178</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a959c54923e42b729a0efe756ed801894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a959c54923e42b729a0efe756ed801894">&#9670;&nbsp;</a></span>getLeafNodes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getLeafNodes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">linkBase::LinkedList::LinkedList</a> &lt;<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt;U&gt;*&gt;
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get all leaf-nodes of current node </p>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list</a> of pointers to each leaf-node </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>if current node is a leaf-node , the function will return an empty list </dd></dl>
+<dl class="section user"><dt>Order:</dt><dd>take current node as a tree-root-node , and then place this tree in this way: <ol>
+<li>
+root-up </li>
+<li>
+among all the child nodes of a node , the child node with least index in the child-nodes list placed in the far left </li>
+</ol>
+in this case , the order of the leaf-nodes in the returned list is: up-to-down and left-to-right </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00464">464</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a8cc4831a0a5b3e4ea71a69043d69c88f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cc4831a0a5b3e4ea71a69043d69c88f">&#9670;&nbsp;</a></span>getParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::getParent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt;U&gt;*
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get parent node </p>
+<dl class="section return"><dt>Returns</dt><dd>a pointer to parent node </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>changing the returned value won't actually effect the parent pointer in current node , but the parent node of current node can be effected through the returned pointer </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00411">411</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a9e478403bada9fe33fbb2e48bbe6026f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e478403bada9fe33fbb2e48bbe6026f">&#9670;&nbsp;</a></span>height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the height of current node(every leaf-node has a height of 0) </p>
+<dl class="section return"><dt>Returns</dt><dd>the height of current node(every leaf-node has a height of 0) </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>the height of current node is the longest path length between a leaf-node and current node among all leaf-nodes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00924">924</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b7a84ee4620e37cf5ff4c3a55871c18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b7a84ee4620e37cf5ff4c3a55871c18">&#9670;&nbsp;</a></span>insertChildAfterWithData() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::insertChildAfterWithData </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
+          <td class="paramname"><em>dat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create a new node with specified data and then insert a pointer to it after the node of specified index in the child-nodes list </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">dat</td><td>specified data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>if the index doesn't exist , return -1;</li>
+<li>or else , return 0 </li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>the index must exist , or else the insertion will fail </dd></dl>
+<dl class="section user"><dt>After inserting:</dt><dd>the new child node's parent will be set to current node </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>use move-constructor of type T to move the data to the new node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00630">630</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a189ef2a9277ae9a54d6cd0087d95e9b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a189ef2a9277ae9a54d6cd0087d95e9b6">&#9670;&nbsp;</a></span>insertChildAfterWithData() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::insertChildAfterWithData </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>dat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create a new node with specified data and then insert a pointer to it after the node of specified index in the child-nodes list </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">dat</td><td>specified data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>if the index doesn't exist , return -1;</li>
+<li>or else , return 0 </li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>the index must exist , or else the insertion will fail </dd></dl>
+<dl class="section user"><dt>After inserting:</dt><dd>the new child node's parent will be set to current node </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>use copy-constructor of type T to copy the data to the new node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00609">609</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="aa50b3ab2a6705a6ba0c8499a3cff0fe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa50b3ab2a6705a6ba0c8499a3cff0fe3">&#9670;&nbsp;</a></span>insertChildBeforeWithData() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::insertChildBeforeWithData </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
+          <td class="paramname"><em>dat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create a new node with specified data and then insert a pointer to it before the node of specified index in the child-nodes list </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">dat</td><td>specified data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>if the index doesn't exist , return -1;</li>
+<li>or else , return 0 </li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>the index must exist , or else the insertion will fail </dd></dl>
+<dl class="section user"><dt>After inserting:</dt><dd>the new child node's parent will be set to current node </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>use move-constructor of type T to move the data to the new node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00588">588</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a46866956f93ba261101c9c6261c2fca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46866956f93ba261101c9c6261c2fca6">&#9670;&nbsp;</a></span>insertChildBeforeWithData() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::insertChildBeforeWithData </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>dat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create a new node with specified data and then insert a pointer to it before the node of specified index in the child-nodes list </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">dat</td><td>specified data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>if the index doesn't exist , return -1;</li>
+<li>or else , return 0 </li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>the index must exist , or else the insertion will fail </dd></dl>
+<dl class="section user"><dt>After inserting:</dt><dd>the new child node's parent will be set to current node </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>use copy-constructor of type T to copy the data to the new node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00567">567</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a7dff81173958641e59f818940a7ebf77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dff81173958641e59f818940a7ebf77">&#9670;&nbsp;</a></span>isLeaf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::isLeaf </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>whether current node is a leaf-node </p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>if current node is a leaf-node , return 1;</li>
+<li>or else , return 0 </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00445">445</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
 <a id="a70defb3cbe80d228ad7eeedeb47d0135"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70defb3cbe80d228ad7eeedeb47d0135">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
@@ -416,16 +1568,12 @@ template&lt;typename U &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>left reference of the node itself </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>left reference of the node being assigned </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>use move-assignment of type U and child-nodes <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list </a> to move data and child-nodes list from the node passed in by parameter </dd></dl>
+<dl class="section user"><dt>Result:</dt><dd>current node will have the same data, parent pointer and child-nodes list as the node passed in by parameter </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00095">95</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a56117e02cf1da4763dbc3da1164d92c3">data</a> = std::move(right.data);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a729b1ff10f00024a1e245027d91b3111">parent</a> = right.parent;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#ace045950b90d13e9df7144a162e8f13c">children</a> = std::move(right.children);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            }</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00128">128</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
 </div>
 </div>
 <a id="a0564a1a0a31e4030ecb7a1083c88288e"></a>
@@ -463,18 +1611,501 @@ template&lt;typename U &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>left reference of the node itself </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>left reference of the node being assigned </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>use copy-assignment of type U and child-nodes <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list </a> to copy data and child-nodes list from the node passed in by parameter </dd></dl>
+<dl class="section user"><dt>Result:</dt><dd>current node will have the same data, parent pointer and child-nodes list as the node passed in by parameter </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00081">81</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordflow">if</span>(<span class="keyword">this</span> == &amp;right)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a56117e02cf1da4763dbc3da1164d92c3">data</a> = right.data;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a729b1ff10f00024a1e245027d91b3111">parent</a> = right.parent;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <a class="code" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#ace045950b90d13e9df7144a162e8f13c">children</a> = right.children;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00108">108</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a530b63efb89f3686557ad8ed3d9dd73c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a530b63efb89f3686557ad8ed3d9dd73c">&#9670;&nbsp;</a></span>removeAllChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::removeAllChild </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>remove all child nodes , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of them </p>
+<dl class="section return"><dt>Returns</dt><dd>the number of removed nodes </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>if the child-nodes list is empty , this function will do nothing and return 0 </dd></dl>
+<dl class="section user"><dt>After removing:</dt><dd>as for the child nodes of the node being removed:<ul>
+<li>pointers to them will be added to the end of current node's child-nodes list</li>
+<li>their parent will be set to current node </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00827">827</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a705ce11b43bf1ed63e1995711f4549d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a705ce11b43bf1ed63e1995711f4549d1">&#9670;&nbsp;</a></span>removeChildOfIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::removeChildOfIndex </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>remove the node of specified index in the child-nodes list , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of the specified child-node </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>the specified index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>if the index doesn't exist , return -1;</li>
+<li>or else , return 0 </li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>the index must exist , or else the remove will fail </dd></dl>
+<dl class="section user"><dt>After removing:</dt><dd>as for the child nodes of the node being removed:<ul>
+<li>pointers to them will be added to the end of current node's child-nodes list</li>
+<li>their parent will be set to current node </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00705">705</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a23c7c7c42c8dce5d9eea1f21f6dc7d94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c7c7c42c8dce5d9eea1f21f6dc7d94">&#9670;&nbsp;</a></span>removeChildrenOfData() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::removeChildrenOfData </td>
+          <td>(</td>
+          <td class="paramtype">U &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; int(U &amp;, U &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>remove those child nodes containing the specified data , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of them </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the specified data </td></tr>
+    <tr><td class="paramname">equal</td><td>function to judge whether one data is equal to another , which will change the data objects to be compared </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the number of removed nodes </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>if there is no node containing the specified data , this function will do nothing and return 0 </dd></dl>
+<dl class="section user"><dt>How to compare:</dt><dd>call a function using the callable object passed in by the parameter to compare whether the data part of each child node is equal to the specified data:<ul>
+<li>if equal , the function should return 1</li>
+<li>if not equal , the function should return 0</li>
+<li>the function should have two formal parameters , the first one is a lvalue reference bound to type U which means one data object , the second one is a lvalue reference bound to type U which means another data object </li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt>After removing:</dt><dd>as for the child nodes of the node being removed:<ul>
+<li>pointers to them will be added to the end of current node's child-nodes list</li>
+<li>their parent will be set to current node </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00805">805</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a1195f3276b94f3c505de854da63e9aee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1195f3276b94f3c505de854da63e9aee">&#9670;&nbsp;</a></span>removeChildrenOfData() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::removeChildrenOfData </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>remove those child nodes containing the specified data , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of them </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the specified data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the number of removed nodes </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>if there is no node containing the specified data , this function will do nothing and return 0 </dd></dl>
+<dl class="section user"><dt>How to compare:</dt><dd><ul>
+<li>if the type of node's data part is floating-point(float , double , long double) number , use floating-point error (1e-6);</li>
+<li>or else , use operator == </li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt>After removing:</dt><dd>as for the child nodes of the node being removed:<ul>
+<li>pointers to them will be added to the end of current node's child-nodes list</li>
+<li>their parent will be set to current node </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00736">736</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a30ae7635b137324170a9ea6708bd9252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30ae7635b137324170a9ea6708bd9252">&#9670;&nbsp;</a></span>removeChildrenOfData() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::removeChildrenOfData </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; int(U const &amp;, U const &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>remove those child nodes containing the specified data , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of them </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the specified data </td></tr>
+    <tr><td class="paramname">equal</td><td>function to judge whether one data is equal to another , which won't change the data objects to be compared </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the number of removed nodes </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>if there is no node containing the specified data , this function will do nothing and return 0 </dd></dl>
+<dl class="section user"><dt>How to compare:</dt><dd>call a function using the callable object passed in by the parameter to compare whether the data part of each child node is equal to the specified data:<ul>
+<li>if equal , the function should return 1</li>
+<li>if not equal , the function should return 0</li>
+<li>the function should have two formal parameters , the first one is a const lvalue reference bound to type U which means one data object , the second one is a const lvalue reference bound to type U which means another data object </li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt>After removing:</dt><dd>as for the child nodes of the node being removed:<ul>
+<li>pointers to them will be added to the end of current node's child-nodes list</li>
+<li>their parent will be set to current node </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00770">770</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="aed88099c7d866fbbe66b3bbe147a44cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed88099c7d866fbbe66b3bbe147a44cc">&#9670;&nbsp;</a></span>removeFirstChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::removeFirstChild </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>remove the first node in the child-nodes list , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of the first child-node </p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>if the child-nodes list is empty , return -1;</li>
+<li>or else , return 0 </li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>the child-nodes list must not be empty , or else the remove will fail </dd></dl>
+<dl class="section user"><dt>After removing:</dt><dd>as for the child nodes of the node being removed:<ul>
+<li>pointers to them will be added to the end of current node's child-nodes list</li>
+<li>their parent will be set to current node </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00650">650</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="a1ec5b974709181baed9e6cfa9d3b2d8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ec5b974709181baed9e6cfa9d3b2d8a">&#9670;&nbsp;</a></span>removeLastChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::removeLastChild </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>remove the last node in the child-nodes list , just like calling the <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#add18e0b09d8ed7635e7d752283f737d8">destructor </a> of the last child-node </p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>if the child-nodes list is empty , return -1;</li>
+<li>or else , return 0 </li>
+</ul>
+</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>the child-nodes list must not be empty , or else the remove will fail </dd></dl>
+<dl class="section user"><dt>After removing:</dt><dd>as for the child nodes of the node being removed:<ul>
+<li>pointers to them will be added to the end of current node's child-nodes list</li>
+<li>their parent will be set to current node </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00677">677</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="aea5555f74503587b5174f8deffd6a5fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea5555f74503587b5174f8deffd6a5fc">&#9670;&nbsp;</a></span>setParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::setParent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>set the parent node of current node to the specified node </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>the specified node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>this function won't add the pointer of current node to the specified node's child-nodes list. Actually, this function will do nothing besides setting current node's parent node to the specified node </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00899">899</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<a id="acc8eddbdb0cd98c2479dddd6947ad4f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc8eddbdb0cd98c2479dddd6947ad4f8">&#9670;&nbsp;</a></span>traverseAsTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Telephone_DS::treeBase::Tree::Tree</a>&lt; T &gt;::<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt;::traverseAsTree </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; &amp;, int, int)&gt;&#160;</td>
+          <td class="paramname"><em>doSomething</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>take current node as a tree-root-node , traverse the tree by rows(include the root-node) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doSomething</td><td>a function to call when this function traverses each node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Order:</dt><dd>take current node as a tree-root-node , and then place this tree in this way: <ol>
+<li>
+root-up </li>
+<li>
+among all the child nodes of a node , the child node with least index in the child-nodes list placed in the far left </li>
+</ol>
+in that case , this function will traverse all nodes of the tree row by row from up to down while traversing from left to right in a row </dd></dl>
+<dl class="section user"><dt>Action:</dt><dd>As the function traverses each node , each time it will call the callable object passed in by the parameter. For the callable object passed in by the parameter , there are the following requirements:<ol type="1">
+<li>return void</li>
+<li>the <b>first</b> formal parameter is an lvalue reference bound to a <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html" title="tree-node of common tree">TreeNode</a>&lt;U&gt; , which means the node being traversed currently</li>
+<li>the <b>second</b> formal parameter is a int , which means the index of the row being traversed currently(place the tree as described above , assume that the index of the top row is 0 , and row-index increases downward)</li>
+<li>the <b>third</b> formal parameter is a int , which means the index of the node in the current traversed row(place the tree as described above , number each node in the current traversed row , assume that the node-index of the most-left node is 0 , and node-index increases rightward)</li>
+</ol>
+<ul>
+<li>the formal parameter list can be like this: (<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html" title="tree-node of common tree">TreeNode</a>&lt;U&gt; &amp;nowNode , int rowIndex , int nodeIndex) </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00867">867</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a4b682814d14447120dd184fd300deade"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b682814d14447120dd184fd300deade">&#9670;&nbsp;</a></span>Tree</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Tree</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>you can access the private member function of class <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode </a> in class <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree.html">Tree </a> </p>
+<dl class="section note"><dt>Note</dt><dd>this is to prevent users from calling some member functions of <a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode </a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00954">954</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -503,7 +2134,7 @@ template&lt;typename U &gt; </div>
 </div><div class="memdoc">
 <p>a <a class="el" href="class_telephone___d_s_1_1link_base_1_1_linked_list_1_1_linked_list.html">list</a> of pointers to child nodes </p>
 
-<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00044">44</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00045">45</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
 
 </div>
 </div>
@@ -511,9 +2142,6 @@ template&lt;typename U &gt; </div>
 <li><a class="el" href="_tree_8h_source.html">Tree.h</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclass_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_html_a56117e02cf1da4763dbc3da1164d92c3"><div class="ttname"><a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a56117e02cf1da4763dbc3da1164d92c3">Telephone_DS::treeBase::Tree::Tree::TreeNode::data</a></div><div class="ttdeci">U data</div><div class="ttdoc">data of tree-node</div><div class="ttdef"><b>Definition:</b> <a href="_tree_8h_source.html#l00036">Tree.h:36</a></div></div>
-<div class="ttc" id="aclass_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_html_ace045950b90d13e9df7144a162e8f13c"><div class="ttname"><a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#ace045950b90d13e9df7144a162e8f13c">Telephone_DS::treeBase::Tree::Tree::TreeNode::children</a></div><div class="ttdeci">linkBase::LinkedList::LinkedList&lt; TreeNode&lt; U &gt; * &gt; children</div><div class="ttdef"><b>Definition:</b> <a href="_tree_8h_source.html#l00044">Tree.h:44</a></div></div>
-<div class="ttc" id="aclass_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_html_a729b1ff10f00024a1e245027d91b3111"><div class="ttname"><a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a729b1ff10f00024a1e245027d91b3111">Telephone_DS::treeBase::Tree::Tree::TreeNode::parent</a></div><div class="ttdeci">TreeNode&lt; U &gt; * parent</div><div class="ttdoc">pointer to parent node</div><div class="ttdef"><b>Definition:</b> <a href="_tree_8h_source.html#l00039">Tree.h:39</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
