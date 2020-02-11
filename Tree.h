@@ -1137,7 +1137,7 @@ namespace Telephone_DS::treeBase::Tree
         }
         /**
          * @brief destructor
-         * @ To Do List:
+         * @par To Do List:
          * call @link Telephone_DS::treeBase::Tree::Tree::TreeNode::~TreeNode destructor
          * @endlink of each node of current tree
          */
