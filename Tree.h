@@ -887,19 +887,6 @@ namespace Telephone_DS::treeBase::Tree
                     }
                 }
             }
-            
-        private:
-            /**
-             * @brief set the parent node of current node to the specified node
-             * @param node the specified node
-             * @note this function won't add the pointer of current node to the specified node's
-             * child-nodes list. Actually, this function will do nothing besides setting current
-             * node's parent node to the specified node
-             */
-            virtual void setParent(TreeNode<U> &node)
-            {
-                parent = &node;
-            }
             /**
              * @brief get the depth of current node(the root-depth is 0)
              * @return the depth of current node(the root-depth is 0)
@@ -942,6 +929,19 @@ namespace Telephone_DS::treeBase::Tree
                     }
                 }
                 return height;
+            }
+            
+        private:
+            /**
+             * @brief set the parent node of current node to the specified node
+             * @param node the specified node
+             * @note this function won't add the pointer of current node to the specified node's
+             * child-nodes list. Actually, this function will do nothing besides setting current
+             * node's parent node to the specified node
+             */
+            virtual void setParent(TreeNode<U> &node)
+            {
+                parent = &node;
             }
             
             /**

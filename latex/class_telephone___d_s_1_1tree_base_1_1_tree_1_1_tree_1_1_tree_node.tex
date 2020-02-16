@@ -79,7 +79,11 @@ virtual int \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tre
 virtual int \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_a530b63efb89f3686557ad8ed3d9dd73c}{remove\+All\+Child}} ()
 \begin{DoxyCompactList}\small\item\em remove all child nodes , just like calling the \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_add18e0b09d8ed7635e7d752283f737d8}{destructor }} of them \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_acc8eddbdb0cd98c2479dddd6947ad4f8}{traverse\+As\+Tree}} (std\+::function$<$ void(\mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node}{Tree\+Node}}$<$ U $>$ \&, int, int)$>$ do\+Something)
-\begin{DoxyCompactList}\small\item\em take current node as a tree-\/root-\/node , traverse the tree by rows(include the root-\/node) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em take current node as a tree-\/root-\/node , traverse the tree by rows(include the root-\/node) \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_a9a95ed720428bb48b8720a433461a563}{depth}} ()
+\begin{DoxyCompactList}\small\item\em get the depth of current node(the root-\/depth is 0) \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_a9e478403bada9fe33fbb2e48bbe6026f}{height}} ()
+\begin{DoxyCompactList}\small\item\em get the height of current node(every leaf-\/node has a height of 0) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -90,11 +94,7 @@ U \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree
 \begin{DoxyCompactItemize}
 \item 
 virtual void \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_aea5555f74503587b5174f8deffd6a5fc}{set\+Parent}} (\mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node}{Tree\+Node}}$<$ U $>$ \&node)
-\begin{DoxyCompactList}\small\item\em set the parent node of current node to the specified node \end{DoxyCompactList}\item 
-virtual int \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_a9a95ed720428bb48b8720a433461a563}{depth}} ()
-\begin{DoxyCompactList}\small\item\em get the depth of current node(the root-\/depth is 0) \end{DoxyCompactList}\item 
-virtual int \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_a9e478403bada9fe33fbb2e48bbe6026f}{height}} ()
-\begin{DoxyCompactList}\small\item\em get the height of current node(every leaf-\/node has a height of 0) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em set the parent node of current node to the specified node \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -345,7 +345,7 @@ Definition at line 435 of file Tree.\+h.
 \doxysubsubsection{\texorpdfstring{depth()}{depth()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 template$<$typename U $>$ \\
-virtual int \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree}{Telephone\+\_\+\+D\+S\+::tree\+Base\+::\+Tree\+::\+Tree}}$<$ T $>$\+::\mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node}{Tree\+Node}}$<$ U $>$\+::depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+virtual int \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree}{Telephone\+\_\+\+D\+S\+::tree\+Base\+::\+Tree\+::\+Tree}}$<$ T $>$\+::\mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node}{Tree\+Node}}$<$ U $>$\+::depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -356,7 +356,7 @@ the depth of current node(the root-\/depth is 0)
 \end{DoxyReturn}
 
 
-Definition at line 907 of file Tree.\+h.
+Definition at line 894 of file Tree.\+h.
 
 \mbox{\Hypertarget{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_a8425d5f80ac2521e99c84229e78218ae}\label{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_a8425d5f80ac2521e99c84229e78218ae}} 
 \index{Telephone\_DS::treeBase::Tree::Tree$<$ T $>$::TreeNode$<$ U $>$@{Telephone\_DS::treeBase::Tree::Tree$<$ T $>$::TreeNode$<$ U $>$}!getAllNodes@{getAllNodes}}
@@ -769,7 +769,7 @@ Definition at line 411 of file Tree.\+h.
 \doxysubsubsection{\texorpdfstring{height()}{height()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 template$<$typename U $>$ \\
-virtual int \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree}{Telephone\+\_\+\+D\+S\+::tree\+Base\+::\+Tree\+::\+Tree}}$<$ T $>$\+::\mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node}{Tree\+Node}}$<$ U $>$\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+virtual int \mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree}{Telephone\+\_\+\+D\+S\+::tree\+Base\+::\+Tree\+::\+Tree}}$<$ T $>$\+::\mbox{\hyperlink{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node}{Tree\+Node}}$<$ U $>$\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -783,7 +783,7 @@ the height of current node is the longest path length between a leaf-\/node and 
 \end{DoxyNote}
 
 
-Definition at line 924 of file Tree.\+h.
+Definition at line 911 of file Tree.\+h.
 
 \mbox{\Hypertarget{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_a8b7a84ee4620e37cf5ff4c3a55871c18}\label{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_a8b7a84ee4620e37cf5ff4c3a55871c18}} 
 \index{Telephone\_DS::treeBase::Tree::Tree$<$ T $>$::TreeNode$<$ U $>$@{Telephone\_DS::treeBase::Tree::Tree$<$ T $>$::TreeNode$<$ U $>$}!insertChildAfterWithData@{insertChildAfterWithData}}
@@ -1308,7 +1308,7 @@ this function won\textquotesingle{}t add the pointer of current node to the spec
 \end{DoxyNote}
 
 
-Definition at line 899 of file Tree.\+h.
+Definition at line 942 of file Tree.\+h.
 
 \mbox{\Hypertarget{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_acc8eddbdb0cd98c2479dddd6947ad4f8}\label{class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node_acc8eddbdb0cd98c2479dddd6947ad4f8}} 
 \index{Telephone\_DS::treeBase::Tree::Tree$<$ T $>$::TreeNode$<$ U $>$@{Telephone\_DS::treeBase::Tree::Tree$<$ T $>$::TreeNode$<$ U $>$}!traverseAsTree@{traverseAsTree}}

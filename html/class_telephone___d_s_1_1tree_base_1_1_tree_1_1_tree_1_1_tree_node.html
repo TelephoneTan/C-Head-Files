@@ -190,6 +190,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acc8eddbdb0cd98c2479dddd6947ad4f8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#acc8eddbdb0cd98c2479dddd6947ad4f8">traverseAsTree</a> (std::function&lt; void(<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; &amp;, int, int)&gt; doSomething)</td></tr>
 <tr class="memdesc:acc8eddbdb0cd98c2479dddd6947ad4f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">take current node as a tree-root-node , traverse the tree by rows(include the root-node)  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#acc8eddbdb0cd98c2479dddd6947ad4f8">More...</a><br /></td></tr>
 <tr class="separator:acc8eddbdb0cd98c2479dddd6947ad4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a95ed720428bb48b8720a433461a563"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a9a95ed720428bb48b8720a433461a563">depth</a> ()</td></tr>
+<tr class="memdesc:a9a95ed720428bb48b8720a433461a563"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the depth of current node(the root-depth is 0)  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a9a95ed720428bb48b8720a433461a563">More...</a><br /></td></tr>
+<tr class="separator:a9a95ed720428bb48b8720a433461a563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e478403bada9fe33fbb2e48bbe6026f"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a9e478403bada9fe33fbb2e48bbe6026f">height</a> ()</td></tr>
+<tr class="memdesc:a9e478403bada9fe33fbb2e48bbe6026f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the height of current node(every leaf-node has a height of 0)  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a9e478403bada9fe33fbb2e48bbe6026f">More...</a><br /></td></tr>
+<tr class="separator:a9e478403bada9fe33fbb2e48bbe6026f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -203,12 +209,6 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:aea5555f74503587b5174f8deffd6a5fc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#aea5555f74503587b5174f8deffd6a5fc">setParent</a> (<a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html">TreeNode</a>&lt; U &gt; &amp;node)</td></tr>
 <tr class="memdesc:aea5555f74503587b5174f8deffd6a5fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the parent node of current node to the specified node  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#aea5555f74503587b5174f8deffd6a5fc">More...</a><br /></td></tr>
 <tr class="separator:aea5555f74503587b5174f8deffd6a5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a95ed720428bb48b8720a433461a563"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a9a95ed720428bb48b8720a433461a563">depth</a> ()</td></tr>
-<tr class="memdesc:a9a95ed720428bb48b8720a433461a563"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the depth of current node(the root-depth is 0)  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a9a95ed720428bb48b8720a433461a563">More...</a><br /></td></tr>
-<tr class="separator:a9a95ed720428bb48b8720a433461a563"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e478403bada9fe33fbb2e48bbe6026f"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a9e478403bada9fe33fbb2e48bbe6026f">height</a> ()</td></tr>
-<tr class="memdesc:a9e478403bada9fe33fbb2e48bbe6026f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the height of current node(every leaf-node has a height of 0)  <a href="class_telephone___d_s_1_1tree_base_1_1_tree_1_1_tree_1_1_tree_node.html#a9e478403bada9fe33fbb2e48bbe6026f">More...</a><br /></td></tr>
-<tr class="separator:a9e478403bada9fe33fbb2e48bbe6026f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -594,7 +594,7 @@ template&lt;typename U &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -602,7 +602,7 @@ template&lt;typename U &gt; </div>
 <p>get the depth of current node(the root-depth is 0) </p>
 <dl class="section return"><dt>Returns</dt><dd>the depth of current node(the root-depth is 0) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00907">907</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00894">894</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
 
 </div>
 </div>
@@ -1246,7 +1246,7 @@ template&lt;typename U &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1255,7 +1255,7 @@ template&lt;typename U &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>the height of current node(every leaf-node has a height of 0) </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>the height of current node is the longest path length between a leaf-node and current node among all leaf-nodes </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00924">924</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00911">911</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
 
 </div>
 </div>
@@ -2015,7 +2015,7 @@ template&lt;typename U &gt; </div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>this function won't add the pointer of current node to the specified node's child-nodes list. Actually, this function will do nothing besides setting current node's parent node to the specified node </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00899">899</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tree_8h_source.html#l00942">942</a> of file <a class="el" href="_tree_8h_source.html">Tree.h</a>.</p>
 
 </div>
 </div>
