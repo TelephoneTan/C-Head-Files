@@ -1,4 +1,4 @@
-//
+﻿//
 // Created by Telephone on 2019/10/19 0019.
 //
 
@@ -320,18 +320,18 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                     }
                 }
             }
-        
+
             //扩展空间后 , 长度不为0的情况下
-        
+
             //需要判断下标是否合法
             //通过逻辑上的前后连续赋值 , 实现插入 , 最后更新length、head、tail
             //通过计算得出是移动前段数据还是移动后段数据
-        
+
             //扩展空间后 , 长度为0的情况下
-        
+
             //无需判断下标是否合法
             //直接在memHead后放置第一个结点 , 并更新length、head、tail
-        
+
             if(length == 0)
             {//无需判断下标合法 , 将第一个结点设置为memHead指向的首个元素 , 设置好length、head和tail ,
                 // 设置好新结点的值
@@ -516,18 +516,18 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                     }
                 }
             }
-        
+
             //扩展空间后 , 长度不为0的情况下
-        
+
             //需要判断下标是否合法
             //通过逻辑上的前后连续赋值 , 实现插入 , 最后更新length、head、tail
             //通过计算得出是移动前段数据还是移动后段数据
-        
+
             //扩展空间后 , 长度为0的情况下
-        
+
             //无需判断下标是否合法
             //直接在memHead后放置第一个结点 , 并更新length、head、tail
-        
+
             if(length == 0)
             {//无需判断下标合法 , 将第一个结点设置为memHead指向的首个元素 , 设置好length、head和tail ,
                 // 设置好新结点的值

@@ -1,4 +1,4 @@
-//
+﻿//
 // Created by Telephone on 2019/12/29 0029.
 //
 
@@ -143,8 +143,8 @@ namespace Telephone_DS::treeBase::Tree
              * @brief get child nodes
              * @return a [list](@ref Telephone_DS::linkBase::LinkedList::LinkedList) of pointers
              * to child nodes
-             * @note changing the returned list won't actually effect the child-nodes list in 
-             * current node , but the child nodes of current node can be effected through the 
+             * @note changing the returned list won't actually effect the child-nodes list in
+             * current node , but the child nodes of current node can be effected through the
              * pointers in the returned list
              * @par Order:
              * the returned list is tha same as the child-nodes list
@@ -404,8 +404,8 @@ namespace Telephone_DS::treeBase::Tree
             /**
              * @brief get parent node
              * @return a pointer to parent node
-             * @note changing the returned value won't actually effect the parent pointer in 
-             * current node , but the parent node of current node can be effected through the 
+             * @note changing the returned value won't actually effect the parent pointer in
+             * current node , but the parent node of current node can be effected through the
              * returned pointer
              */
             virtual auto getParent() -> TreeNode<U>*
@@ -930,7 +930,7 @@ namespace Telephone_DS::treeBase::Tree
                 }
                 return height;
             }
-            
+
         private:
             /**
              * @brief set the parent node of current node to the specified node
@@ -943,7 +943,7 @@ namespace Telephone_DS::treeBase::Tree
             {
                 parent = &node;
             }
-            
+
             /**
              * @brief you can access the private member function of class @link
              * Telephone_DS::treeBase::Tree::Tree::TreeNode TreeNode @endlink in class @link
@@ -1231,7 +1231,7 @@ namespace Telephone_DS::treeBase::Tree
          * @brief traverse current tree and then find the nodes of current tree containing
          * specified data(include the root-node)
          * @param data the specified data
-         * @param equal function to judge whether one data is equal to another , which won't 
+         * @param equal function to judge whether one data is equal to another , which won't
          * change the data objects to be compared
          * @return a @link Telephone_DS::linkBase::LinkedList::LinkedList list @endlink of
          * pointers to nodes of current tree containing the specified data
