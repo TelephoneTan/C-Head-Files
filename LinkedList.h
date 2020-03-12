@@ -2,6 +2,7 @@
 // Created by Telephone on 2019/10/20 0020.
 //
 
+
 /// @file LinkedList.h
 
 #ifndef POLYNOMIAL_LINKEDLIST_H
