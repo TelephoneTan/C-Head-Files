@@ -73,7 +73,9 @@ namespace Telephone_DS::linkBase::LinkedList
                     }
                     beforeNode = newNode;
                 }
+                if (!tailNode)throw std::exception("access member using NULL pointer");
                 tailNode->next = zeroNode;
+                if (!zeroNode)throw std::exception("access member using NULL pointer");
                 zeroNode->before = tailNode;
                 index = 0;
                 now = zeroNode;
