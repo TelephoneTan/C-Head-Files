@@ -11,6 +11,8 @@
 #include <cstring>
 #include <stdexcept>
 
+#include "telephone_ds_define.h"
+
 namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的命名空间
 {
     template <typename T> class ArrayStorage
@@ -44,6 +46,7 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
     public:
         explicit ArrayStorage(long scale)                               //有参数构造
         {
+            if (scale <= 0)throw std::invalid_argument("scale should be greater than 0");
             this->scale = scale;
         }
         explicit ArrayStorage() = default;                              //无参数构造
@@ -65,6 +68,7 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                 long headDis = src.head - src.memHead;
                 long tailDis = src.tail - src.memHead;
                 memHead = (T *)std::malloc(src.memLen * sizeof(T));
+                if (!memHead)throw std::bad_alloc();
                 std::memset(memHead , 0 , src.memLen * sizeof(T));
                 memLen = src.memLen;
                 length = src.length;
@@ -127,6 +131,7 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                     long headDis = right.head - right.memHead;
                     long tailDis = right.tail - right.memHead;
                     memHead = (T *)std::malloc(right.memLen * sizeof(T));
+                    if (!memHead)throw std::bad_alloc();
                     std::memset(memHead, 0 , right.memLen * sizeof(T));
                     memLen = right.memLen;
                     length = right.length;
@@ -188,14 +193,21 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
             head = nullptr;
             tail = nullptr;
         }
-        virtual void addBefore(long index , T const &x)
+        virtual int addBefore(long index , T const &x)
         {
             if(length == memLen)    //满了或尚未分配空间     //空间分配
             {
                 if (memLen == 0)
                 {//尚未分配空间
-                    memHead = (T *)std::realloc(memHead,
+
+                    T* realloc_res = (T *)std::realloc(memHead,
                                                       (memLen + scale) * sizeof(T));
+                    if (!realloc_res)
+                    {
+                        free(memHead);
+                        throw std::bad_alloc();
+                    }
+                    memHead = realloc_res;
                     std::memset(memHead + memLen , 0 , scale * sizeof(T));
                     memLen += scale;
                 } else
@@ -205,8 +217,14 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                     再迁移数据 , 最后更新head指针*/
                         long dis = head - memHead;
                         size_t moveSize = (length - dis) * sizeof(T);
-                        memHead = (T *)std::realloc(memHead,
+                        T* realloc_res = (T *)std::realloc(memHead,
                                                           (memLen + scale) * sizeof(T));
+                        if (!realloc_res)
+                        {
+                            free(memHead);
+                            throw std::bad_alloc();
+                        }
+                        memHead = realloc_res;
                         std::memset(memHead + memLen, 0, scale * sizeof(T));
                         memLen += scale;
                         head = tail = memHead + dis;
@@ -214,8 +232,14 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                         head += scale;
                     } else
                     {//首尾分离 , 需要先分配空间并更新memHead指针和memLen值 , 再更新head和tail指针
-                        memHead = (T *)std::realloc(memHead,
+                        T* realloc_res = (T *)std::realloc(memHead,
                                                           (memLen + scale) * sizeof(T));
+                        if (!realloc_res)
+                        {
+                            free(memHead);
+                            throw std::bad_alloc();
+                        }
+                        memHead = realloc_res;
                         std::memset(memHead + memLen, 0, scale * sizeof(T));
                         memLen += scale;
                         head = memHead;
@@ -277,23 +301,26 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                         tail = n;
                         length++;
                     }
-                    return;
+                    return 0;
                 }
-                //抛出异常
-                char exp[100];
-                std::sprintf(exp , "[function addBefore()] Do not have such node : index(%ld)" ,
-                             index);
-                throw std::out_of_range(exp);
+                return TELEPHONE_DS_BAD_INDEX;
             }
+            return 0;
         }
-        virtual void addBefore(long index , T &&x)
+        virtual int addBefore(long index , T &&x)
         {
             if(length == memLen)    //满了或尚未分配空间     //空间分配
             {
                 if (memLen == 0)
                 {//尚未分配空间
-                    memHead = (T *)std::realloc(memHead,
+                    T* realloc_res = (T *)std::realloc(memHead,
                                                 (memLen + scale) * sizeof(T));
+                    if (!realloc_res)
+                    {
+                        free(memHead);
+                        throw std::bad_alloc();
+                    }
+                    memHead = realloc_res;
                     std::memset(memHead + memLen , 0 , scale * sizeof(T));
                     memLen += scale;
                 } else
@@ -303,8 +330,14 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                     再迁移数据 , 最后更新head指针*/
                         long dis = head - memHead;
                         size_t moveSize = (length - dis) * sizeof(T);
-                        memHead = (T *)std::realloc(memHead,
+                        T* realloc_res = (T *)std::realloc(memHead,
                                                     (memLen + scale) * sizeof(T));
+                        if (!realloc_res)
+                        {
+                            free(memHead);
+                            throw std::bad_alloc();
+                        }
+                        memHead = realloc_res;
                         std::memset(memHead + memLen, 0, scale * sizeof(T));
                         memLen += scale;
                         head = tail = memHead + dis;
@@ -312,8 +345,14 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                         head += scale;
                     } else
                     {//首尾分离 , 需要先分配空间并更新memHead指针和memLen值 , 再更新head和tail指针
-                        memHead = (T *)std::realloc(memHead,
+                        T* realloc_res = (T *)std::realloc(memHead,
                                                     (memLen + scale) * sizeof(T));
+                        if (!realloc_res)
+                        {
+                            free(memHead);
+                            throw std::bad_alloc();
+                        }
+                        memHead = realloc_res;
                         std::memset(memHead + memLen, 0, scale * sizeof(T));
                         memLen += scale;
                         head = memHead;
@@ -375,23 +414,26 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                         tail = n;
                         length++;
                     }
-                    return;
+                    return 0;
                 }
-                //抛出异常
-                char exp[100];
-                std::sprintf(exp , "[function addBefore()] Do not have such node : index(%ld)" ,
-                             index);
-                throw std::out_of_range(exp);
+                return TELEPHONE_DS_BAD_INDEX;
             }
+            return 0;
         }
-        virtual void addAfter(long index , T const &x)
+        virtual int addAfter(long index , T const &x)
         {
             if(length == memLen)    //满了或尚未分配空间     //空间分配
             {
                 if (memLen == 0)
                 {//尚未分配空间
-                    memHead = (T *)std::realloc(memHead,
+                    T* realloc_res = (T *)std::realloc(memHead,
                                                       (memLen + scale) * sizeof(T));
+                    if (!realloc_res)
+                    {
+                        free(memHead);
+                        throw std::bad_alloc();
+                    }
+                    memHead = realloc_res;
                     std::memset(memHead + memLen, 0, scale * sizeof(T));
                     memLen += scale;
                 } else
@@ -401,8 +443,14 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                     再迁移数据 , 最后更新head指针*/
                         long dis = head - memHead;
                         size_t moveSize = (length - dis) * sizeof(T);
-                        memHead = (T *)std::realloc(memHead,
+                        T* realloc_res = (T *)std::realloc(memHead,
                                                           (memLen + scale) * sizeof(T));
+                        if (!realloc_res)
+                        {
+                            free(memHead);
+                            throw std::bad_alloc();
+                        }
+                        memHead = realloc_res;
                         std::memset(memHead + memLen, 0, scale * sizeof(T));
                         memLen += scale;
                         head = tail = memHead + dis;
@@ -410,8 +458,14 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                         head += scale;
                     } else
                     {//首尾分离 , 需要先分配空间并更新memHead指针和memLen值 , 再更新head和tail指针
-                        memHead = (T *)std::realloc(memHead,
+                        T* realloc_res = (T *)std::realloc(memHead,
                                                           (memLen + scale) * sizeof(T));
+                        if (!realloc_res)
+                        {
+                            free(memHead);
+                            throw std::bad_alloc();
+                        }
+                        memHead = realloc_res;
                         std::memset(memHead + memLen, 0, scale * sizeof(T));
                         memLen += scale;
                         head = memHead;
@@ -473,23 +527,26 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                         tail = n;
                         length++;
                     }
-                    return;
+                    return 0;
                 }
-                //抛出异常
-                char exp[100];
-                std::sprintf(exp , "[function addAfter()] Do not have such node : index(%ld)" ,
-                             index);
-                throw std::out_of_range(exp);
+                return TELEPHONE_DS_BAD_INDEX;
             }
+            return 0;
         }
-        virtual void addAfter(long index , T &&x)
+        virtual int addAfter(long index , T &&x)
         {
             if(length == memLen)    //满了或尚未分配空间     //空间分配
             {
                 if (memLen == 0)
                 {//尚未分配空间
-                    memHead = (T *)std::realloc(memHead,
+                    T* realloc_res = (T *)std::realloc(memHead,
                                                 (memLen + scale) * sizeof(T));
+                    if (!realloc_res)
+                    {
+                        free(memHead);
+                        throw std::bad_alloc();
+                    }
+                    memHead = realloc_res;
                     std::memset(memHead + memLen, 0, scale * sizeof(T));
                     memLen += scale;
                 } else
@@ -499,8 +556,14 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                     再迁移数据 , 最后更新head指针*/
                         long dis = head - memHead;
                         size_t moveSize = (length - dis) * sizeof(T);
-                        memHead = (T *)std::realloc(memHead,
+                        T* realloc_res = (T *)std::realloc(memHead,
                                                     (memLen + scale) * sizeof(T));
+                        if (!realloc_res)
+                        {
+                            free(memHead);
+                            throw std::bad_alloc();
+                        }
+                        memHead = realloc_res;
                         std::memset(memHead + memLen, 0, scale * sizeof(T));
                         memLen += scale;
                         head = tail = memHead + dis;
@@ -508,8 +571,14 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                         head += scale;
                     } else
                     {//首尾分离 , 需要先分配空间并更新memHead指针和memLen值 , 再更新head和tail指针
-                        memHead = (T *)std::realloc(memHead,
+                        T* realloc_res = (T *)std::realloc(memHead,
                                                     (memLen + scale) * sizeof(T));
+                        if (!realloc_res)
+                        {
+                            free(memHead);
+                            throw std::bad_alloc();
+                        }
+                        memHead = realloc_res;
                         std::memset(memHead + memLen, 0, scale * sizeof(T));
                         memLen += scale;
                         head = memHead;
@@ -571,14 +640,11 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                         tail = n;
                         length++;
                     }
-                    return;
+                    return 0;
                 }
-                //抛出异常
-                char exp[100];
-                std::sprintf(exp , "[function addAfter()] Do not have such node : index(%ld)" ,
-                             index);
-                throw std::out_of_range(exp);
+                return TELEPHONE_DS_BAD_INDEX;
             }
+            return 0;
         }
         virtual T &at(long index)
         {
@@ -589,13 +655,12 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                 return *(memHead + (memIndex % memLen));
             }
             char exp[100];
-            std::sprintf(exp , "[function at()] Do not have such node : index(%ld)" , index);
+            std::sprintf(exp , "bad index");
             throw std::out_of_range(exp);
         }
-        virtual void deleteFrom(long index , long num)      // the index node itself will be deleted
+        virtual int deleteFrom(long index , long num)      // the index node itself will be deleted
         // too（include）
         {
-            char exp[100];
             if(index >= 0 && index < length)
             {
                 if(num <= length - index)
@@ -670,22 +735,13 @@ namespace Telephone_DS::arrayBase::ArrayStorage //Telephone写的ArrayStorage的
                                 length -= num;
                             }
                         }
-                        return;
+                        return 0;
                     }
-                    std::sprintf(exp ,
-                                 "[function deleteFrom()] Delete num is too small : num(%ld) from index"
-                                 "(%ld)" ,
-                                 num , index);
-                    throw std::length_error(exp);
+                    return TELEPHONE_DS_BAD_DEL_NUM;
                 }
-                std::sprintf(exp ,
-                             "[function deleteFrom()] Delete num is too large : num(%ld) from index(%ld)" ,
-                             num , index);
-                throw std::length_error(exp);
+                return TELEPHONE_DS_BAD_DEL_NUM;
             }
-            std::sprintf(exp , "[function deleteFrom()] Do not have such node : index(%ld)" ,
-                         index);
-            throw std::out_of_range(exp);
+            return TELEPHONE_DS_BAD_INDEX;
         }
         virtual long len()
         {

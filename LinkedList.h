@@ -12,6 +12,8 @@
 #include <cstdio>
 #include <stdexcept>
 
+#include "telephone_ds_define.h"
+
 namespace Telephone_DS::linkBase::LinkedList
 {
     template <typename T> class LinkedList
@@ -46,6 +48,10 @@ namespace Telephone_DS::linkBase::LinkedList
                 for (long i = 0; i < src.length; ++i)
                 {
                     Node *newNode = (Node *)std::malloc(sizeof(Node));
+                    if (!newNode)
+                    {
+                        throw std::bad_alloc();
+                    }
                     newNode->next = newNode->before = nullptr;
                     newNode->data = src.at(i);
                     if(beforeNode != nullptr)
@@ -124,6 +130,7 @@ namespace Telephone_DS::linkBase::LinkedList
                     for (long i = 0; i < right.length; ++i)
                     {
                         Node *newNode = (Node *)std::malloc(sizeof(Node));
+                        if (!newNode)throw std::bad_alloc();
                         newNode->next = newNode->before = nullptr;
                         newNode->data = right.at(i);
                         if(beforeNode != nullptr)
@@ -215,7 +222,7 @@ namespace Telephone_DS::linkBase::LinkedList
             index = -1;
             now = nullptr;
         }
-        virtual void addBefore(long Index , T const &x)
+        virtual int addBefore(long Index , T const &x)
         {
             if(Index >= 0 && Index < length)
             {//如果序号合法
@@ -272,6 +279,10 @@ namespace Telephone_DS::linkBase::LinkedList
                 Node *newBefore = now->before;
                 Node *newNext = now;
                 Node * newNode = (Node *)std::malloc(sizeof(Node));
+                if (!newNode)
+                {
+                    throw std::bad_alloc();
+                }
                 newNode->next = newNode->before = nullptr;
                 newNode->data = x;
                 newNode->next = newNext;
@@ -279,25 +290,26 @@ namespace Telephone_DS::linkBase::LinkedList
                 newBefore->next = newNext->before = newNode;
                 index++;
                 length++;
-                return;
+                return 0;
             }
             else if(length == 0)
             {//或序号不合法但是当前长度为0
                 now = (Node *)std::malloc(sizeof(Node));
+                if (!now)
+                {
+                    throw std::bad_alloc();
+                }
                 now->before = now->next = nullptr;
                 index = 0;
                 length++;
                 now->data = x;
                 now->next = now;
                 now->before = now;
-                return;
+                return 0;
             }
-            char exp[100];
-            std::sprintf(exp , "[function addBefore()] Do not have such node : index(%ld)" ,
-                         Index);
-            throw std::out_of_range(exp);
+            return TELEPHONE_DS_BAD_INDEX;
         }
-        virtual void addBefore(long Index , T &&x)
+        virtual int addBefore(long Index , T &&x)
         {
             if(Index >= 0 && Index < length)
             {//如果序号合法
@@ -354,6 +366,10 @@ namespace Telephone_DS::linkBase::LinkedList
                 Node *newBefore = now->before;
                 Node *newNext = now;
                 Node * newNode = (Node *)std::malloc(sizeof(Node));
+                if (!newNode)
+                {
+                    throw std::bad_alloc();
+                }
                 newNode->next = newNode->before = nullptr;
                 newNode->data = std::move(x);
                 newNode->next = newNext;
@@ -361,25 +377,27 @@ namespace Telephone_DS::linkBase::LinkedList
                 newBefore->next = newNext->before = newNode;
                 index++;
                 length++;
-                return;
+                return 0;
             }
             else if(length == 0)
             {//或序号不合法但是当前长度为0
                 now = (Node *)std::malloc(sizeof(Node));
+                if (!now)
+                {
+                    throw std::bad_alloc();
+                }
                 now->before = now->next = nullptr;
                 index = 0;
                 length++;
                 now->data = std::move(x);
                 now->next = now;
                 now->before = now;
-                return;
+                return 0;
             }
-            char exp[100];
-            std::sprintf(exp , "[function addBefore()] Do not have such node : index(%ld)" ,
-                         Index);
-            throw std::out_of_range(exp);
+            return TELEPHONE_DS_BAD_INDEX;
+            return 0;
         }
-        virtual void addAfter(long Index , T const &x)
+        virtual int addAfter(long Index , T const &x)
         {
             if(Index >= 0 && Index < length)
             {//如果序号合法
@@ -436,31 +454,37 @@ namespace Telephone_DS::linkBase::LinkedList
                 Node *newBefore = now;
                 Node *newNext = now->next;
                 Node *newNode = (Node *)std::malloc(sizeof(Node));
+                if (!newNode)
+                {
+                    throw std::bad_alloc();
+                }
                 newNode->next = newNode->before = nullptr;
                 newNode->data = x;
                 newNode->next = newNext;
                 newNode->before = newBefore;
                 newBefore->next = newNext->before = newNode;
                 length++;
-                return;
+                return 0;
             }
             else if(length == 0)
             {//或序号不合法但是当前长度为0
                 now = (Node *)std::malloc(sizeof(Node));
+                if (!now)
+                {
+                    throw std::bad_alloc();
+                }
                 now->next = now->before = nullptr;
                 index = 0;
                 length++;
                 now->data = x;
                 now->next = now;
                 now->before = now;
-                return;
+                return 0;
             }
-            char exp[100];
-            std::sprintf(exp , "[function addAfter()] Do not have such node : index(%ld)" ,
-                         Index);
-            throw std::out_of_range(exp);
+            return TELEPHONE_DS_BAD_INDEX;
+            return 0;
         }
-        virtual void addAfter(long Index , T &&x)
+        virtual int addAfter(long Index , T &&x)
         {
             if(Index >= 0 && Index < length)
             {//如果序号合法
@@ -517,6 +541,10 @@ namespace Telephone_DS::linkBase::LinkedList
                 Node *newBefore = now->before;
                 Node *newNext = now;
                 Node * newNode = (Node *)std::malloc(sizeof(Node));
+                if (!newNode)
+                {
+                    throw std::bad_alloc();
+                }
                 newNode->next = newNode->before = nullptr;
                 newNode->data = std::move(x);
                 newNode->next = newNext;
@@ -524,23 +552,24 @@ namespace Telephone_DS::linkBase::LinkedList
                 newBefore->next = newNext->before = newNode;
                 index++;
                 length++;
-                return;
+                return 0;
             }
             else if(length == 0)
             {//或序号不合法但是当前长度为0
                 now = (Node *)std::malloc(sizeof(Node));
+                if (!now)
+                {
+                    throw std::bad_alloc();
+                }
                 now->before = now->next = nullptr;
                 index = 0;
                 length++;
                 now->data = std::move(x);
                 now->next = now;
                 now->before = now;
-                return;
+                return 0;
             }
-            char exp[100];
-            std::sprintf(exp , "[function addBefore()] Do not have such node : index(%ld)" ,
-                         Index);
-            throw std::out_of_range(exp);
+            return TELEPHONE_DS_BAD_INDEX;
         }
         virtual T &at(long Index)
         {
@@ -598,13 +627,10 @@ namespace Telephone_DS::linkBase::LinkedList
                 }
                 return now->data;
             }
-            char exp[100];
-            std::sprintf(exp , "[function at()] Do not have such node : index(%ld)" , Index);
-            throw std::out_of_range(exp);
+            throw std::out_of_range("bad index");
         }
-        virtual void deleteFrom(long Index , long num)  //删除的结点包括Index所代表的结点
+        virtual int deleteFrom(long Index , long num)  //删除的结点包括Index所代表的结点
         {
-            char exp[100];
             if(Index >= 0 && Index < length)
             {//结点序号合法
                 if(num <= length - index)
@@ -706,22 +732,13 @@ namespace Telephone_DS::linkBase::LinkedList
                                 index -= num;
                             }
                         }
-                        return;
+                        return 0;
                     }
-                    std::sprintf(exp ,
-                                 "[function deleteFrom()] Delete num is too small : num(%ld) from index"
-                                 "(%ld)" ,
-                                 num , Index);
-                    throw std::length_error(exp);
+                    return TELEPHONE_DS_BAD_DEL_NUM;
                 }
-                std::sprintf(exp ,
-                             "[function deleteFrom()] Delete num is too large : num(%ld) from index(%ld)" ,
-                             num , Index);
-                throw std::length_error(exp);
+                return TELEPHONE_DS_BAD_DEL_NUM;
             }
-            std::sprintf(exp , "[function deleteFrom()] Do not have such node : index(%ld)" ,
-                         Index);
-            throw std::out_of_range(exp);
+            return TELEPHONE_DS_BAD_INDEX;
         }
         virtual long len()
         {

@@ -16,6 +16,8 @@
 #include <cmath>
 #include <functional>
 
+#include "telephone_ds_define.h"
+
 /// namespace of common tree
 namespace Telephone_DS::treeBase::Tree
 {
