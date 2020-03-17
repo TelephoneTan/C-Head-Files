@@ -1,4 +1,4 @@
-﻿//
+//
 // Created by Telephone on 2019/10/20 0020.
 //
 
@@ -13,6 +13,7 @@
 #include <stdexcept>
 
 #include "telephone_ds_define.h"
+
 
 namespace Telephone_DS::linkBase::LinkedList
 {

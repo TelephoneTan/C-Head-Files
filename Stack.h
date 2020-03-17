@@ -1,4 +1,4 @@
-﻿//
+//
 // Created by Telephone on 2019/10/20 0020.
 //
 
@@ -9,6 +9,7 @@
 #include <stdexcept>
 #include <cstdio>
 #include <ArrayStorage.h>
+
 
 namespace Telephone_DS::arrayBase::Stack    //Telephone写的Stack的命名空间
 {

@@ -1,4 +1,4 @@
-﻿//
+//
 // Created by Telephone on 2019/10/20 0020.
 //
 
@@ -10,6 +10,7 @@
 #include <utility>
 #include <stdexcept>
 #include <LinkedList.h>
+
 
 namespace Telephone_DS::linkBase::Queue
 {

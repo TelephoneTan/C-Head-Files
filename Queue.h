@@ -1,4 +1,4 @@
-﻿//
+//
 // Created by Telephone on 2019/10/19 0019.
 //
 
@@ -10,6 +10,7 @@
 #include <cstdio>
 #include <utility>
 #include <ArrayStorage.h>
+
 
 namespace Telephone_DS::arrayBase::Queue    //Telephone写的Queue的命名空间
 {
