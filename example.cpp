@@ -7,7 +7,6 @@
 #include <Tree.h>
 #include <cstdio>
 
-
 int main()
 {
     Telephone_DS::treeBase::Tree::Tree <int> tree(0);
