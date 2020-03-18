@@ -7,10 +7,13 @@ jobs:
     name: echo_nmake
     runs-on: windows-latest
     steps:
+    - uses: actions/checkout@v2
+      with:
+        token: ${{MY_TOKEN}}
     - name: nmake and echo
       shell: cmd
       env: 
         vc_arch: x86
       run: |
+        ls
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch%
-        nmake
