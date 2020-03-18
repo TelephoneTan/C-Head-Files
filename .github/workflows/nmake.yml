@@ -65,6 +65,6 @@ jobs:
         password: wbsiqdzxzxexdaje
         subject: GitHub Action | C-Head-Files | nmake
         body: file://log_github_all.txt
-        to: telephone2021@outlook.com
+        to: 1822834059@qq.com
         from: whale
         content_type: text/html
