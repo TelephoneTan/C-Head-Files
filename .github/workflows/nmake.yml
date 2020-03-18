@@ -33,4 +33,5 @@ jobs:
         echo ---------------------run---------------------
         CPP_HEADERS.exe
         echo -------------------run-end-------------------
-        echo [in $(pwd)]
+        echo in：
+        pwd
