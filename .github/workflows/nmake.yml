@@ -57,10 +57,14 @@ jobs:
         token: ${{ secrets.MY_TOKEN }}
         ref: github_action_nmake
     - name: send email
-      env: 
-        mbox: ${{ secrets.MY_QQ_MAILBOX }}
-        boxwd: ${{ secrets.MY_QQ_MAILBOX_PASSWD }}
-      run: |
-        sudo apt install -y mailutils
-        sudo echo -e "set from=whale \nsmtp=smtp.qq.com" >>/etc/mail.rc
-        sudo echo -e "set smtp-auth-user=${mbox} \nsmtp-auth-password=\"${boxwd}\" \nsmtp-auth=login" >>/etc/mail.rc
+      uses: dawidd6/action-send-mail@master
+      with:
+        serveraddress: smtp.qq.com
+        serverport: 465
+        username: 3508065304@qq.com
+        password: wbsiqdzxzxexdaje
+        subject: GitHub Action | C-Head-Files | nmake
+        body: file://log_github_all.txt
+        to: telephone2021@outlook.com
+        from: whale
+        content_type: text/html
