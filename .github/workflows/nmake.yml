@@ -40,7 +40,7 @@ jobs:
         type log_github.txt >log_github_all.txt
         type log_github2.txt >>log_github_all.txt
         type log_github_all.txt
-        git remote show -v
+        git remote -v
     - name: Send Email
       uses: dawidd6/action-send-mail@master
       with:
