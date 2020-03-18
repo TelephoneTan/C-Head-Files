@@ -3,11 +3,10 @@ on:
   schedule:
     - cron: '* * * * *'
 jobs:
-  echo:
-    name: echo
+  echo_nmake:
+    name: echo_nmake
     runs-on: windows-latest
     steps:
     - name: nmake and echo
       run: |
-        cd ..
-        ls
+        echo 1
