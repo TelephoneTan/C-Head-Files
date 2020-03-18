@@ -1,20 +1,21 @@
-name: echo_nmake
+name: nmake
 on:
   push:
     branches:
       - master
 jobs:
-  echo_nmake:
-    name: echo_nmake
+  nmake:
+    name: nmake
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
       with:
         token: ${{secrets.MY_TOKEN}}
-    - name: nmake and echo
+    - name: vcvars | build(bat)
       shell: cmd
       env: 
         vc_arch: x86
       run: |
-        dir
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch%
+      run: |
+        build_example(GitHubCI).bat
