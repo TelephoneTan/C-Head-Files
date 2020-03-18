@@ -41,10 +41,12 @@ jobs:
         type log_github.txt >log_github_all.txt
         type log_github2.txt >>log_github_all.txt
         type log_github_all.txt
+        git config --global user.email "telephone2021@outlook.com"
+        git config --global user.name "Telephone"
         git remote set-url origin https://%token%@github.com/Telephone2019/C-Head-Files
         git add .
         git commit -m "log"
-        git push origin master:git_action_nmake
+        git push --force origin master:git_action_nmake
     - name: Send Email
       uses: dawidd6/action-send-mail@master
       with:
