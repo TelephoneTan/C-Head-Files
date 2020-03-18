@@ -1,7 +1,8 @@
 name: echo_nmake
 on:
-  schedule:
-    - cron: '* * * * *'
+  push:
+    branches:
+      - master
 jobs:
   echo_nmake:
     name: echo_nmake
