@@ -1,0 +1,13 @@
+name: echo_nmake
+on:
+  schedule:
+    - cron: '* * * * *'
+jobs:
+  echo:
+    name: echo
+    runs-on: windows-latest
+    steps:
+    - name: nmake and echo
+      run: |
+        cd ..
+        ls
