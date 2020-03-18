@@ -8,6 +8,9 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: nmake and echo
+      shell: cmd
+      env: 
+        vc_arch: x86
       run: |
-        cd /d C:/
-        dir /S nmake.exe
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch%
+        nmake
