@@ -10,28 +10,46 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        token: ${{secrets.MY_TOKEN}}
-    - name: vcvars | build(bat)
+        token: ${{ secrets.MY_TOKEN }}
+    - name: vcvars | cmake | nmake | run
       shell: cmd
       env: 
         vc_arch: x86
       run: |
-        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch%
-        rd build_github /s /q
-        mkdir build_github
-        cd build_github
-        echo -------------------start-------------------
-        echo=
-        echo -------------------init-------------------
-        echo=
-        echo -------------------cmake-------------------
-        cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Debug
-        echo -------------------MSBuild-------------------
-        nmake 
-        echo -------------------end-------------------
-        echo=
-        echo ---------------------run---------------------
-        CPP_HEADERS.exe
-        echo -------------------run-end-------------------
-        echo in：
-        pwd
+        chcp 65001 >log_github.txt 2>&1
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch% />>log_github.txt 2>&1
+        rd build_github /s /q >log_github2.txt 2>&1
+        mkdir build_github >>log_github2.txt 2>&1
+        cd build_github >>log_github2.txt 2>&1
+        echo -------------------start------------------->>../log_github2.txt 2>&1
+        echo=>>../log_github2.txt 2>&1
+        echo -------------------init------------------->>../log_github2.txt 2>&1
+        echo=>>../log_github2.txt 2>&1
+        echo -------------------cmake------------------->>../log_github2.txt 2>&1
+        cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Debug >../>log_github2.txt 2>&1
+        echo -------------------MSBuild------------------->>../log_github2.txt 2>&1
+        nmake >>../log_github2.txt 2>&1
+        echo -------------------end------------------->>../log_github2.txt 2>&1
+        echo=>>../log_github2.txt 2>&1
+        echo ---------------------run--------------------->>../log_github2.txt 2>&1
+        CPP_HEADERS.exe >>../log_github2.txt 2>&1
+        echo -------------------run-end------------------->>../log_github2.txt 2>&1
+        echo in：>>../log_github2.txt 2>&1
+        pwd >>../log_github2.txt 2>&1
+        type ../log_github.txt
+        type ../log_github2.txt
+        cd ..
+        copy /Y log_github.txt log_github_all.txt
+        copy /Y log_github2.txt log_github_all.txt
+    - name: Send Email
+      uses: dawidd6/action-send-mail@master
+      with:
+        serveraddress: smtp.qq.com
+        serverport: 465
+        username: ${{ secrets.MY_QQ_MAILBOX }}
+        password: ${{ secrets.MY_QQ_MAILBOX_PASSWD }}
+        subject: GitHub Action | C-Head-Files | nmake
+        body: file://log_github_all.txt
+        to: telephone2021@outlook.com
+        from: whale
+        content_type: text/html
