@@ -61,6 +61,6 @@ jobs:
         mbox: ${{ secrets.MY_QQ_MAILBOX }}
         boxwd: ${{ secrets.MY_QQ_MAILBOX_PASSWD }}
       run: |
-        sudo apt install -y heirloom-mailx
+        sudo apt install -y mailutils
         sudo echo "set from=whale smtp=smtp.qq.com" >>/etc/s-nail.rc
         sudo echo "set smtp-auth-user=${mbox} smtp-auth-password="${boxwd}" smtp-auth=login" >>/etc/s-nail.rc
