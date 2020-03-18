@@ -17,4 +17,5 @@ jobs:
         vc_arch: x86
       run: |
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch%
-        build_example(GitHubCI).bat
+        build_example(GitHubCI).bat 
+        
