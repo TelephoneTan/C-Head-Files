@@ -36,11 +36,12 @@ jobs:
         echo -------------------run-end------------------->>../log_github2.txt 2>&1
         echo in：>>../log_github2.txt 2>&1
         pwd >>../log_github2.txt 2>&1
-        type ../log_github.txt
-        type ../log_github2.txt
         cd ..
+        type log_github.txt
+        type log_github2.txt
         copy /Y log_github.txt log_github_all.txt
         copy /Y log_github2.txt log_github_all.txt
+        git branch
     - name: Send Email
       uses: dawidd6/action-send-mail@master
       with:
