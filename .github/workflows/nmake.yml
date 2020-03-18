@@ -17,5 +17,20 @@ jobs:
         vc_arch: x86
       run: |
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch%
-        build_example(GitHubCI).bat 
-        dir
+        rd build_github /s /q
+        mkdir build_github
+        cd build_github
+        echo -------------------start-------------------
+        echo=
+        echo -------------------init-------------------
+        echo=
+        echo -------------------cmake-------------------
+        cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Debug
+        echo -------------------MSBuild-------------------
+        nmake 
+        echo -------------------end-------------------
+        echo=
+        echo ---------------------run---------------------
+        CPP_HEADERS.exe
+        echo -------------------run-end-------------------
+        pwd
