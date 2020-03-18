@@ -15,6 +15,7 @@ jobs:
       shell: cmd
       env: 
         vc_arch: x86
+        token: ${{ secrets.MY_TOKEN }}
       run: |
         chcp 65001 >log_github.txt 2>&1
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch% >>log_github.txt 2>&1
@@ -40,7 +41,10 @@ jobs:
         type log_github.txt >log_github_all.txt
         type log_github2.txt >>log_github_all.txt
         type log_github_all.txt
-        git remote -v
+        git remote set-url origin https://%token%@github.com/Telephone2019/C-Head-Files
+        git add .
+        git commit -m "log"
+        git push origin master:git_action_nmake
     - name: Send Email
       uses: dawidd6/action-send-mail@master
       with:
