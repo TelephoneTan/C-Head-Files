@@ -9,4 +9,5 @@ jobs:
     steps:
     - name: nmake and echo
       run: |
-        echo 1
+        cd /d C:/
+        dir /S nmake.exe
