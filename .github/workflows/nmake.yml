@@ -57,6 +57,10 @@ jobs:
         token: ${{ secrets.MY_TOKEN }}
         ref: github_action_nmake
     - name: send email
-      uses: dawidd6/action-send-mail@master
+      env: 
+        mbox: ${{ secrets.MY_QQ_MAILBOX }}
+        boxwd: ${{ secrets.MY_QQ_MAILBOX_PASSWD }}
       run: |
-        apt install heirloom-mailx
+        apt install -y heirloom-mailx
+        echo "set from=whale smtp=smtp.qq.com" >>/etc/s-nail.rc
+        echo "set smtp-auth-user=${mbox} smtp-auth-password="${boxwd}" smtp-auth=login" >>/etc/s-nail.rc
