@@ -37,12 +37,10 @@ jobs:
         echo in：>>../log_github2.txt 2>&1
         pwd >>../log_github2.txt 2>&1
         cd ..
-        type log_github.txt
-        type log_github2.txt
         type log_github.txt >log_github_all.txt
         type log_github2.txt >>log_github_all.txt
         type log_github_all.txt
-        git remote show
+        git remote show -v
     - name: Send Email
       uses: dawidd6/action-send-mail@master
       with:
