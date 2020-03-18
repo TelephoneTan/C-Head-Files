@@ -17,7 +17,7 @@ jobs:
         vc_arch: x86
       run: |
         chcp 65001 >log_github.txt 2>&1
-        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch% />>log_github.txt 2>&1
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch% >>log_github.txt 2>&1
         rd build_github /s /q >log_github2.txt 2>&1
         mkdir build_github >>log_github2.txt 2>&1
         cd build_github >>log_github2.txt 2>&1
@@ -26,7 +26,7 @@ jobs:
         echo -------------------init------------------->>../log_github2.txt 2>&1
         echo=>>../log_github2.txt 2>&1
         echo -------------------cmake------------------->>../log_github2.txt 2>&1
-        cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Debug >../>log_github2.txt 2>&1
+        cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Debug >>../log_github2.txt 2>&1
         echo -------------------MSBuild------------------->>../log_github2.txt 2>&1
         nmake >>../log_github2.txt 2>&1
         echo -------------------end------------------->>../log_github2.txt 2>&1
@@ -37,11 +37,10 @@ jobs:
         echo in：>>../log_github2.txt 2>&1
         pwd >>../log_github2.txt 2>&1
         cd ..
-        type log_github.txt
-        type log_github2.txt
         copy /Y log_github.txt log_github_all.txt
         copy /Y log_github2.txt log_github_all.txt
-        git branch
+        type log_github_all.txt
+        git remote show
     - name: Send Email
       uses: dawidd6/action-send-mail@master
       with:
