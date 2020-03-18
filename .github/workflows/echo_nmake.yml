@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        token: ${{MY_TOKEN}}
+        token: ${{secrets.MY_TOKEN}}
     - name: nmake and echo
       shell: cmd
       env: 
