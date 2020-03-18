@@ -37,10 +37,10 @@ jobs:
         echo in：>>../log_github2.txt 2>&1
         pwd >>../log_github2.txt 2>&1
         cd ..
-        copy /Y log_github.txt log_github_all.txt
-        copy /Y log_github2.txt log_github_all.txt
         type log_github.txt
         type log_github2.txt
+        type log_github.txt >log_github_all.txt
+        type log_github2.txt >>log_github_all.txt
         type log_github_all.txt
         git remote show
     - name: Send Email
