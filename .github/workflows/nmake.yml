@@ -46,8 +46,16 @@ jobs:
         git remote set-url origin https://%token%@github.com/Telephone2019/C-Head-Files
         git add .
         git commit -m "log"
-        git push --force origin master:git_action_nmake
-    - name: Send Email
+        git push --force origin master:github_action_nmake
+  email:
+    name: email
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.MY_TOKEN }}
+        ref: github_action_nmake
+    - name: send email
       uses: dawidd6/action-send-mail@master
       with:
         serveraddress: smtp.qq.com
