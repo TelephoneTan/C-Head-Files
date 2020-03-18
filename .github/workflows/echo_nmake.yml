@@ -15,5 +15,5 @@ jobs:
       env: 
         vc_arch: x86
       run: |
-        ls
+        dir
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch%
