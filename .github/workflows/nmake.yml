@@ -15,8 +15,8 @@ jobs:
       shell: cmd
       env: 
         vc_arch: x86
-        mbox : ${{ secrets.MY_QQ_MAIL_BOX }}
-        boxwd: ${{ secrets.MY_QQ_MAIL_BOX_PASSWD }}
+        mbox : ${{ secrets.MY_QQ_MAILBOX }}
+        boxwd: ${{ secrets.MY_QQ_MAILBOX_PASSWD }}
       run: |
         chcp 65001 >log_github.txt 2>&1
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch% >>log_github.txt 2>&1
