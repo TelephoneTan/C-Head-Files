@@ -20,7 +20,7 @@ jobs:
       run: |
         chcp 65001 >log_github.txt 2>&1
         echo -------------------the commit------------------->>log_github.txt 2>&1
-        git show >>log_github.txt 2>&1
+        git log -1 --stat>>log_github.txt 2>&1
         echo=>>log_github.txt 2>&1
         echo -------------------start------------------->>log_github.txt 2>&1
         echo -------------------init------------------->>log_github.txt 2>&1
