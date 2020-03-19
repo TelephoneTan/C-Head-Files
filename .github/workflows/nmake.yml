@@ -15,7 +15,8 @@ jobs:
       shell: cmd
       env: 
         vc_arch: x86
-        token: ${{ secrets.MY_TOKEN }}
+        mbox : ${{ secrets.MY_QQ_MAIL_BOX }}
+        boxwd: ${{ secrets.MY_QQ_MAIL_BOX_PASSWD }}
       run: |
         chcp 65001 >log_github.txt 2>&1
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch% >>log_github.txt 2>&1
@@ -41,30 +42,4 @@ jobs:
         type log_github.txt >log_github_all.txt
         type log_github2.txt >>log_github_all.txt
         type log_github_all.txt
-        git config --global user.email "telephone2021@outlook.com"
-        git config --global user.name "Telephone"
-        git remote set-url origin https://%token%@github.com/Telephone2019/C-Head-Files
-        git add .
-        git commit -m "log"
-        git push --force origin master:github_action_nmake
-  email:
-    name: email
-    runs-on: ubuntu-latest
-    needs: nmake
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.MY_TOKEN }}
-        ref: github_action_nmake
-    - name: send email
-      uses: dawidd6/action-send-mail@master
-      with:
-        serveraddress: smtp.qq.com
-        serverport: 465
-        username: 3508065304@qq.com
-        password: wbsiqdzxzxexdaje
-        subject: GitHub Action | C-Head-Files | nmake
-        body: file://log_github_all.txt
-        to: 1822834059@qq.com
-        from: whale
-        content_type: text/html
+        python3 send_email.py
