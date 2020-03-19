@@ -19,13 +19,15 @@ jobs:
         boxwd: ${{ secrets.MY_QQ_MAILBOX_PASSWD }}
       run: |
         chcp 65001 >log_github.txt 2>&1
+        echo -------------------the commit------------------->>log_github.txt 2>&1
+        git show >>log_github.txt 2>&1
+        echo=>>log_github.txt 2>&1
+        echo -------------------start------------------->>log_github.txt 2>&1
+        echo -------------------init------------------->>log_github.txt 2>&1
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %vc_arch% >>log_github.txt 2>&1
         rd build_github /s /q >log_github2.txt 2>&1
         mkdir build_github >>log_github2.txt 2>&1
         cd build_github >>log_github2.txt 2>&1
-        echo -------------------start------------------->>../log_github2.txt 2>&1
-        echo=>>../log_github2.txt 2>&1
-        echo -------------------init------------------->>../log_github2.txt 2>&1
         echo=>>../log_github2.txt 2>&1
         echo -------------------cmake------------------->>../log_github2.txt 2>&1
         cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Debug >>../log_github2.txt 2>&1
