@@ -9,12 +9,12 @@ from email.header import Header
 env_dist = os.environ
 
 sender = env_dist.get("mbox", "null")
-receivers = ["telephone2021@outlook.com"]
+receivers = ["telephone2021@outlook.com", "1061080272@qq.com"]
 from_name = "whale"
 to_name = "Telephone"
 subject = "GitHub | Action | nmake"
 attachment = "log_github_all.txt"
-attachment_name = "test.txt"
+attachment_name = "nmake_log.txt"
 
 mail_host = "smtp.qq.com"
 mail_port = 465
