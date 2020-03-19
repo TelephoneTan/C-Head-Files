@@ -20,7 +20,7 @@ jobs:
       run: |
         chcp 65001 >log_github.txt 2>&1
         echo -------------------the commit------------------->>log_github.txt 2>&1
-        git log -1 --stat>>log_github.txt 2>&1
+        git log -1 >>log_github.txt 2>&1
         echo=>>log_github.txt 2>&1
         echo -------------------start------------------->>log_github.txt 2>&1
         echo -------------------init------------------->>log_github.txt 2>&1
@@ -45,4 +45,3 @@ jobs:
         type log_github2.txt >>log_github_all.txt
         type log_github_all.txt
         python send_email.py
-        
