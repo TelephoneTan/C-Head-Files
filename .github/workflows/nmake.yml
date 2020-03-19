@@ -45,3 +45,4 @@ jobs:
         type log_github2.txt >>log_github_all.txt
         type log_github_all.txt
         python send_email.py
+        
