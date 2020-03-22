@@ -9,14 +9,14 @@ from email.header import Header
 env_dist = os.environ
 
 sender = env_dist.get("mbox", "null")
-receivers = ["telephone2021@outlook.com", "1061080272@qq.com"]
+receivers = ["telephone2026@163.com", "1061080272@qq.com"]
 from_name = "Telephone"
-to_name = "Telephone"
+to_name = "Developer of C-Head-Files"
 subject = "GitHub | Action | nmake"
 attachment = "log_github_all.txt"
 attachment_name = "nmake_log.txt"
 
-mail_host = "smtp.qq.com"
+mail_host = "i.163.com"
 mail_port = 465
 login_user = sender
 passwd = env_dist.get("boxwd", "null")
