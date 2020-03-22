@@ -9,3 +9,4 @@ include_directories(.)
 set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS "/source-charset:utf-8 /execution-charset:utf-8 /validate-charset /std:c++17")
+
