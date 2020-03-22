@@ -16,7 +16,7 @@ subject = "GitHub | Action | nmake"
 attachment = "log_github_all.txt"
 attachment_name = "nmake_log.txt"
 
-mail_host = "i.163.com"
+mail_host = "smtp.qq.com"
 mail_port = 465
 login_user = sender
 passwd = env_dist.get("boxwd", "null")
