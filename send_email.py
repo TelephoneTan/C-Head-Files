@@ -11,6 +11,7 @@ env_dist = os.environ
 # information
 sender = env_dist.get("mbox", "null")
 receivers = ["telephone.tan@qq.com"]
+from_name = "Telephone Tan"
 to_name = "Developer of C-Head-Files"
 subject = "GitHub | Action | nmake"
 attachment = "log_github_all.txt"
@@ -23,6 +24,7 @@ passwd = env_dist.get("boxwd", "null")
 
 # create instance with attachment
 message = MIMEMultipart()
+message['From'] = Header(from_name, 'utf-8')
 message['To'] = Header(to_name, 'utf-8')
 message['Subject'] = Header(subject, 'utf-8')
 
