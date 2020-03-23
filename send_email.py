@@ -23,7 +23,6 @@ passwd = env_dist.get("boxwd", "null")
 
 # create instance with attachment
 message = MIMEMultipart()
-message['From'] = Header(from_name, 'utf-8')
 message['To'] = Header(to_name, 'utf-8')
 message['Subject'] = Header(subject, 'utf-8')
 
