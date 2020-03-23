@@ -9,7 +9,7 @@ from email.header import Header
 env_dist = os.environ
 
 sender = env_dist.get("mbox", "null")
-receivers = ["telephone2021@outlook.com"]
+receivers = ["telephone2019@dingtalk.com"]
 from_name = "Telephone"
 to_name = "Developer of C-Head-Files"
 subject = "GitHub | Action | nmake"
