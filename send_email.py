@@ -11,7 +11,6 @@ env_dist = os.environ
 # information
 sender = env_dist.get("mbox", "null")
 receivers = ["telephone.tan@qq.com"]
-from_name = "Telephone Tan"
 to_name = "Developer of C-Head-Files"
 subject = "GitHub | Action | nmake"
 attachment = "log_github_all.txt"
