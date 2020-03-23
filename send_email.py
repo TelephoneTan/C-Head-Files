@@ -8,6 +8,7 @@ from email.header import Header
 
 env_dist = os.environ
 
+# information
 sender = env_dist.get("mbox", "null")
 receivers = ["telephone2019@dingtalk.com"]
 from_name = "Telephone"
@@ -21,7 +22,7 @@ mail_port = 465
 login_user = sender
 passwd = env_dist.get("boxwd", "null")
 
-# instance with attachment
+# create instance with attachment
 message = MIMEMultipart()
 message['From'] = Header(from_name, 'utf-8')
 message['To'] = Header(to_name, 'utf-8')
