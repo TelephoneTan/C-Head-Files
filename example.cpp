@@ -17,6 +17,6 @@ int main()
     Telephone_DS::arrayBase::Stack::Stack <int> arrayStack;
     Telephone_DS::arrayBase::Queue::Queue <int> arrayQueue;
 
-    std::printf("\nWelcome to Telephone's Data Structure\n\n");
+    std::printf("\nWelcome to Telephone's Data Structure！\n\n");
     return 0;
 }
