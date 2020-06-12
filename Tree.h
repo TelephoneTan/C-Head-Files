@@ -24,7 +24,8 @@ namespace Telephone_DS::treeBase::Tree
      * @brief common tree
      * @tparam T type of data in tree-node
      */
-    template <typename T> class Tree
+    template <typename T>
+    class Tree
     {
     private:
         /**
@@ -32,19 +33,22 @@ namespace Telephone_DS::treeBase::Tree
          * @tparam U type of data in tree-node
          * @warning this is a private class defined in class Tree
          */
-        template <typename U> class TreeNode
+        template <typename U>
+        class TreeNode
         {
         public:
             /// data of tree-node
             U data;
+
         private:
             /// pointer to parent node
-            TreeNode<U>* parent = nullptr;
+            TreeNode<U> *parent = nullptr;
             /**
              * a [list](@ref Telephone_DS::linkBase::LinkedList::LinkedList) of pointers to
              * child nodes
              */
-            linkBase::LinkedList::LinkedList<TreeNode<U>*> children;
+            linkBase::LinkedList::LinkedList<TreeNode<U> *> children;
+
         public:
             /**
              * @brief general constructor(copy)
@@ -55,9 +59,10 @@ namespace Telephone_DS::treeBase::Tree
              * - data = specified data
              * - child-nodes list = empty
              */
-            explicit TreeNode(U const& d)
+            explicit TreeNode(U const &d)
                 : data(d)
-            {}
+            {
+            }
             /**
              * @brief general constructor(move)
              * @param d data of the new node
@@ -67,9 +72,10 @@ namespace Telephone_DS::treeBase::Tree
              * - data = specified data
              * - child-nodes list = empty
              */
-            explicit TreeNode(U&& d)
+            explicit TreeNode(U &&d)
                 : data(std::move(d))
-            {}
+            {
+            }
             /**
              * @brief copy-constructor
              * @param src
@@ -80,9 +86,10 @@ namespace Telephone_DS::treeBase::Tree
              * current node will have the same data, parent pointer and child-nodes list as the
              * node passed in by parameter
              */
-            TreeNode(TreeNode<U> const& src)
+            TreeNode(TreeNode<U> const &src)
                 : data(src.data), parent(src.parent), children(src.children)
-            {}
+            {
+            }
             /**
              * @brief move-constructor
              * @param src
@@ -93,9 +100,10 @@ namespace Telephone_DS::treeBase::Tree
              * current node will have the same data, parent pointer and child-nodes list as the
              * node passed in by parameter
              */
-            TreeNode(TreeNode<U>&& src) noexcept
+            TreeNode(TreeNode<U> &&src) noexcept
                 : data(std::move(src.data)), parent(src.parent), children(std::move(src.children))
-            {}
+            {
+            }
             /**
              * @brief copy-assignment
              * @param right
@@ -107,7 +115,7 @@ namespace Telephone_DS::treeBase::Tree
              * current node will have the same data, parent pointer and child-nodes list as the
              * node passed in by parameter
              */
-            TreeNode<U>& operator=(TreeNode<U> const& right)
+            TreeNode<U> &operator=(TreeNode<U> const &right)
             {
                 if (this == &right)
                     return *this;
@@ -127,7 +135,7 @@ namespace Telephone_DS::treeBase::Tree
              * current node will have the same data, parent pointer and child-nodes list as the
              * node passed in by parameter
              */
-            TreeNode<U>& operator=(TreeNode<U>&& right) noexcept
+            TreeNode<U> &operator=(TreeNode<U> &&right) noexcept
             {
                 data = std::move(right.data);
                 parent = right.parent;
@@ -151,7 +159,7 @@ namespace Telephone_DS::treeBase::Tree
              * @par Order:
              * the returned list is tha same as the child-nodes list
              */
-            virtual auto getChildren() -> linkBase::LinkedList::LinkedList<TreeNode<U>*>
+            virtual auto getChildren() -> linkBase::LinkedList::LinkedList<TreeNode<U> *>
             {
                 return children;
             }
@@ -162,7 +170,7 @@ namespace Telephone_DS::treeBase::Tree
              * in the child-nodes list;
              * - or else , return nullptr
              */
-            virtual auto getFirstChild() -> TreeNode<U>*
+            virtual auto getFirstChild() -> TreeNode<U> *
             {
                 if (children.isEmpty())
                 {
@@ -177,7 +185,7 @@ namespace Telephone_DS::treeBase::Tree
              * in the child-nodes list;
              * - or else , return nullptr
              */
-            virtual auto getLastChild() -> TreeNode<U>*
+            virtual auto getLastChild() -> TreeNode<U> *
             {
                 if (children.isEmpty())
                 {
@@ -199,16 +207,14 @@ namespace Telephone_DS::treeBase::Tree
              * the returned list is consistent with the child-nodes list in sequential order of
              * nodes
              */
-            virtual auto getChildrenOfData(U const& value) ->
-                linkBase::LinkedList::LinkedList<TreeNode<U>*>
+            virtual auto getChildrenOfData(U const &value) -> linkBase::LinkedList::LinkedList<TreeNode<U> *>
             {
-                linkBase::LinkedList::LinkedList<TreeNode<U>*> res;
-                if (typeid(U) != typeid(double) && typeid(U) != typeid(float) && typeid(U) !=
-                    typeid(long double))
+                linkBase::LinkedList::LinkedList<TreeNode<U> *> res;
+                if (typeid(U) != typeid(double) && typeid(U) != typeid(float) && typeid(U) != typeid(long double))
                 {
                     for (int i = 0; i < children.len(); ++i)
                     {
-                        TreeNode<U>* temp = children.at(i);
+                        TreeNode<U> *temp = children.at(i);
                         if (temp->data == value)
                         {
                             res.addAfter(res.len() - 1, temp);
@@ -219,7 +225,7 @@ namespace Telephone_DS::treeBase::Tree
                 {
                     for (int i = 0; i < children.len(); ++i)
                     {
-                        TreeNode<U>* temp = children.at(i);
+                        TreeNode<U> *temp = children.at(i);
                         if (std::fabs(temp->data - value) <= 1e-6)
                         {
                             res.addAfter(res.len() - 1, temp);
@@ -242,12 +248,10 @@ namespace Telephone_DS::treeBase::Tree
              * the returned list is consistent with the child-nodes list in sequential order of
              * nodes
              */
-            virtual auto getChildrenIndexOfData(U const& value) ->
-                linkBase::LinkedList::LinkedList<int>
+            virtual auto getChildrenIndexOfData(U const &value) -> linkBase::LinkedList::LinkedList<int>
             {
                 linkBase::LinkedList::LinkedList<int> res;
-                if (typeid(U) != typeid(double) && typeid(U) != typeid(float) && typeid(U) !=
-                    typeid(long double))
+                if (typeid(U) != typeid(double) && typeid(U) != typeid(float) && typeid(U) != typeid(long double))
                 {
                     for (int i = 0; i < children.len(); ++i)
                     {
@@ -289,14 +293,15 @@ namespace Telephone_DS::treeBase::Tree
              * the returned list is consistent with the child-nodes list in sequential order of
              * nodes
              */
-            virtual auto getChildrenOfData(U const& value, std::function<int(U const&, U const
-                &)> equal)
-                -> linkBase::LinkedList::LinkedList<TreeNode<U>*>
+            virtual auto getChildrenOfData(U const &value, std::function<int(U const &, U const
+                                                                                            &)>
+                                                               equal)
+                -> linkBase::LinkedList::LinkedList<TreeNode<U> *>
             {
-                linkBase::LinkedList::LinkedList<TreeNode<U>*> res;
+                linkBase::LinkedList::LinkedList<TreeNode<U> *> res;
                 for (int i = 0; i < children.len(); ++i)
                 {
-                    TreeNode<U>* temp = children.at(i);
+                    TreeNode<U> *temp = children.at(i);
                     if (equal(value, temp->data))
                     {
                         res.addAfter(res.len() - 1, temp);
@@ -324,8 +329,7 @@ namespace Telephone_DS::treeBase::Tree
              * the returned list is consistent with the child-nodes list in sequential order of
              * nodes
              */
-            virtual auto getChildrenIndexOfData(U const& value, std::function<int(U const&, U
-                const&)> equal)
+            virtual auto getChildrenIndexOfData(U const &value, std::function<int(U const &, U const &)> equal)
                 -> linkBase::LinkedList::LinkedList<int>
             {
                 linkBase::LinkedList::LinkedList<int> res;
@@ -358,13 +362,12 @@ namespace Telephone_DS::treeBase::Tree
              * the returned list is consistent with the child-nodes list in sequential order of
              * nodes
              */
-            virtual auto getChildrenOfData(U& value, std::function<int(U&, U&)> equal) ->
-                linkBase::LinkedList::LinkedList<TreeNode<U>*>
+            virtual auto getChildrenOfData(U &value, std::function<int(U &, U &)> equal) -> linkBase::LinkedList::LinkedList<TreeNode<U> *>
             {
-                linkBase::LinkedList::LinkedList<TreeNode<U>*> res;
+                linkBase::LinkedList::LinkedList<TreeNode<U> *> res;
                 for (int i = 0; i < children.len(); ++i)
                 {
-                    TreeNode<U>* temp = children.at(i);
+                    TreeNode<U> *temp = children.at(i);
                     if (equal(value, temp->data))
                     {
                         res.addAfter(res.len() - 1, temp);
@@ -392,8 +395,7 @@ namespace Telephone_DS::treeBase::Tree
              * the returned list is consistent with the child-nodes list in sequential order of
              * nodes
              */
-            virtual auto getChildrenIndexOfData(U& value, std::function<int(U&, U&)> equal) ->
-                linkBase::LinkedList::LinkedList<int>
+            virtual auto getChildrenIndexOfData(U &value, std::function<int(U &, U &)> equal) -> linkBase::LinkedList::LinkedList<int>
             {
                 linkBase::LinkedList::LinkedList<int> res;
                 for (int i = 0; i < children.len(); ++i)
@@ -412,7 +414,7 @@ namespace Telephone_DS::treeBase::Tree
              * current node , but the parent node of current node can be effected through the
              * returned pointer
              */
-            virtual auto getParent() -> TreeNode<U>*
+            virtual auto getParent() -> TreeNode<U> *
             {
                 return parent;
             }
@@ -423,9 +425,9 @@ namespace Telephone_DS::treeBase::Tree
              * - if the index exists , return a nonnull pointer to the specified node;
              * - or else , return nullptr
              */
-            virtual auto getChildOfIndex(int index) -> TreeNode<U>*
+            virtual auto getChildOfIndex(int index) -> TreeNode<U> *
             {
-                TreeNode<U>* res = nullptr;
+                TreeNode<U> *res = nullptr;
                 if (index >= 0 && index < children.len())
                 {
                     res = children.at(index);
@@ -465,10 +467,10 @@ namespace Telephone_DS::treeBase::Tree
              * in this case , the order of the leaf-nodes in the returned list is:
              * up-to-down and left-to-right
              */
-            virtual auto getLeafNodes() -> linkBase::LinkedList::LinkedList <TreeNode<U>*>
+            virtual auto getLeafNodes() -> linkBase::LinkedList::LinkedList<TreeNode<U> *>
             {
-                linkBase::Queue::Queue <TreeNode<U>*> nodes;
-                linkBase::LinkedList::LinkedList <TreeNode<U>*> leaves;
+                linkBase::Queue::Queue<TreeNode<U> *> nodes;
+                linkBase::LinkedList::LinkedList<TreeNode<U> *> leaves;
                 if (this->isLeaf())
                 {
                     return std::move(leaves);
@@ -485,8 +487,7 @@ namespace Telephone_DS::treeBase::Tree
                         }
                         else
                         {
-                            linkBase::LinkedList::LinkedList <TreeNode<U>*> childrenTemp
-                                = std::move(nodes.front()->getChildren());
+                            linkBase::LinkedList::LinkedList<TreeNode<U> *> childrenTemp = std::move(nodes.front()->getChildren());
                             for (int j = 0; j < childrenTemp.len(); ++j)
                             {
                                 nodes.push(childrenTemp.at(j));
@@ -511,19 +512,18 @@ namespace Telephone_DS::treeBase::Tree
              * in this case , the order of the nodes in the returned list is:
              * up-to-down and left-to-right
              */
-            virtual auto getAllNodes() -> linkBase::LinkedList::LinkedList <TreeNode<U>*>
+            virtual auto getAllNodes() -> linkBase::LinkedList::LinkedList<TreeNode<U> *>
             {
-                linkBase::LinkedList::LinkedList <TreeNode<U>*> res;
-                linkBase::Queue::Queue <TreeNode<U>*> row;
+                linkBase::LinkedList::LinkedList<TreeNode<U> *> res;
+                linkBase::Queue::Queue<TreeNode<U> *> row;
                 row.push(this);
                 while (!row.isEmpty())
                 {
                     int times = row.len();
                     for (int i = 0; i < times; ++i)
                     {
-                        TreeNode<U>* f = row.front();
-                        linkBase::LinkedList::LinkedList <TreeNode<U>*> childrenList
-                            = std::move(f->getChildren());
+                        TreeNode<U> *f = row.front();
+                        linkBase::LinkedList::LinkedList<TreeNode<U> *> childrenList = std::move(f->getChildren());
                         for (int j = 0; j < childrenList.len(); ++j)
                         {
                             row.push(childrenList.at(j));
@@ -540,7 +540,7 @@ namespace Telephone_DS::treeBase::Tree
              * @param dat specified data
              * @note use copy-constructor of type T to copy the data to the new node
              */
-            virtual void addChildWithData(U const& dat)
+            virtual void addChildWithData(U const &dat)
             {
                 children.addAfter(children.len() - 1, new TreeNode<U>(dat));
                 children.at(children.len() - 1)->setParent(*this);
@@ -551,7 +551,7 @@ namespace Telephone_DS::treeBase::Tree
              * @param dat specified data
              * @note use move-constructor of type T to move the data to the new node
              */
-            virtual void addChildWithData(U&& dat)
+            virtual void addChildWithData(U &&dat)
             {
                 children.addAfter(children.len() - 1, new TreeNode<U>(std::move(dat)));
                 children.at(children.len() - 1)->setParent(*this);
@@ -569,7 +569,7 @@ namespace Telephone_DS::treeBase::Tree
              * the new child node's parent will be set to current node
              * @note use copy-constructor of type T to copy the data to the new node
              */
-            virtual int insertChildBeforeWithData(int index, U const& dat)
+            virtual int insertChildBeforeWithData(int index, U const &dat)
             {
                 if (index < 0 || index >= children.len())
                     return -1;
@@ -590,7 +590,7 @@ namespace Telephone_DS::treeBase::Tree
              * the new child node's parent will be set to current node
              * @note use move-constructor of type T to move the data to the new node
              */
-            virtual int insertChildBeforeWithData(int index, U&& dat)
+            virtual int insertChildBeforeWithData(int index, U &&dat)
             {
                 if (index < 0 || index >= children.len())
                     return -1;
@@ -611,7 +611,7 @@ namespace Telephone_DS::treeBase::Tree
              * the new child node's parent will be set to current node
              * @note use copy-constructor of type T to copy the data to the new node
              */
-            virtual int insertChildAfterWithData(int index, U const& dat)
+            virtual int insertChildAfterWithData(int index, U const &dat)
             {
                 if (index < 0 || index >= children.len())
                     return -1;
@@ -632,7 +632,7 @@ namespace Telephone_DS::treeBase::Tree
              * the new child node's parent will be set to current node
              * @note use move-constructor of type T to move the data to the new node
              */
-            virtual int insertChildAfterWithData(int index, U&& dat)
+            virtual int insertChildAfterWithData(int index, U &&dat)
             {
                 if (index < 0 || index >= children.len())
                     return -1;
@@ -656,8 +656,7 @@ namespace Telephone_DS::treeBase::Tree
             {
                 if (children.isEmpty())
                     return -1;
-                linkBase::LinkedList::LinkedList <TreeNode<U>*> xChildren
-                    = std::move(children.at(0)->getChildren());
+                linkBase::LinkedList::LinkedList<TreeNode<U> *> xChildren = std::move(children.at(0)->getChildren());
                 delete children.at(0);
                 children.deleteFrom(0, 1);
                 for (int i = 0; i < xChildren.len(); ++i)
@@ -683,8 +682,7 @@ namespace Telephone_DS::treeBase::Tree
             {
                 if (children.isEmpty())
                     return -1;
-                linkBase::LinkedList::LinkedList <TreeNode<U>*> xChildren
-                    = std::move(children.at(children.len() - 1)->getChildren());
+                linkBase::LinkedList::LinkedList<TreeNode<U> *> xChildren = std::move(children.at(children.len() - 1)->getChildren());
                 delete children.at(children.len() - 1);
                 children.deleteFrom(children.len() - 1, 1);
                 for (int i = 0; i < xChildren.len(); ++i)
@@ -711,8 +709,7 @@ namespace Telephone_DS::treeBase::Tree
             {
                 if (index < 0 || index >= children.len())
                     return -1;
-                linkBase::LinkedList::LinkedList <TreeNode<U>*> xChildren
-                    = std::move(children.at(index)->getChildren());
+                linkBase::LinkedList::LinkedList<TreeNode<U> *> xChildren = std::move(children.at(index)->getChildren());
                 delete children.at(index);
                 children.deleteFrom(index, 1);
                 for (int i = 0; i < xChildren.len(); ++i)
@@ -738,10 +735,10 @@ namespace Telephone_DS::treeBase::Tree
              * - pointers to them will be added to the end of current node's child-nodes list
              * - their parent will be set to current node
              */
-            virtual int removeChildrenOfData(U const& value)
+            virtual int removeChildrenOfData(U const &value)
             {
                 int removedNum = 0;
-                linkBase::LinkedList::LinkedList <int> rmNodeIndexes =
+                linkBase::LinkedList::LinkedList<int> rmNodeIndexes =
                     std::move(getChildrenIndexOfData(value));
                 for (int i = rmNodeIndexes.len() - 1; i >= 0; --i)
                 {
@@ -772,11 +769,10 @@ namespace Telephone_DS::treeBase::Tree
              * - pointers to them will be added to the end of current node's child-nodes list
              * - their parent will be set to current node
              */
-            virtual int removeChildrenOfData(U const& value, std::function<int(U const&, U
-                const&)> equal)
+            virtual int removeChildrenOfData(U const &value, std::function<int(U const &, U const &)> equal)
             {
                 int removedNum = 0;
-                linkBase::LinkedList::LinkedList <int> rmNodeIndexes =
+                linkBase::LinkedList::LinkedList<int> rmNodeIndexes =
                     std::move(getChildrenIndexOfData(value, equal));
                 for (int i = rmNodeIndexes.len() - 1; i >= 0; --i)
                 {
@@ -807,10 +803,10 @@ namespace Telephone_DS::treeBase::Tree
              * - pointers to them will be added to the end of current node's child-nodes list
              * - their parent will be set to current node
              */
-            virtual int removeChildrenOfData(U& value, std::function<int(U&, U&)> equal)
+            virtual int removeChildrenOfData(U &value, std::function<int(U &, U &)> equal)
             {
                 int removedNum = 0;
-                linkBase::LinkedList::LinkedList <int> rmNodeIndexes =
+                linkBase::LinkedList::LinkedList<int> rmNodeIndexes =
                     std::move(getChildrenIndexOfData(value, equal));
                 for (int i = rmNodeIndexes.len() - 1; i >= 0; --i)
                 {
@@ -869,9 +865,9 @@ namespace Telephone_DS::treeBase::Tree
              * - the formal parameter list can be like this:
              * (TreeNode&lt;U&gt; &nowNode , int rowIndex , int nodeIndex)
              */
-            virtual void traverseAsTree(std::function<void(TreeNode<U>&, int, int)> doSomething)
+            virtual void traverseAsTree(std::function<void(TreeNode<U> &, int, int)> doSomething)
             {
-                linkBase::Queue::Queue <TreeNode<U>*> row;
+                linkBase::Queue::Queue<TreeNode<U> *> row;
                 row.push(this);
                 int rIndex = -1;
                 while (!row.isEmpty())
@@ -880,9 +876,8 @@ namespace Telephone_DS::treeBase::Tree
                     int times = row.len();
                     for (int i = 0; i < times; ++i)
                     {
-                        TreeNode<U>* f = row.front();
-                        linkBase::LinkedList::LinkedList <TreeNode<U>*> childrenList
-                            = std::move(f->getChildren());
+                        TreeNode<U> *f = row.front();
+                        linkBase::LinkedList::LinkedList<TreeNode<U> *> childrenList = std::move(f->getChildren());
                         for (int j = 0; j < childrenList.len(); ++j)
                         {
                             row.push(childrenList.at(j));
@@ -899,7 +894,7 @@ namespace Telephone_DS::treeBase::Tree
             virtual int depth()
             {
                 int depth = 0;
-                TreeNode<U>* temp = this;
+                TreeNode<U> *temp = this;
                 while (temp->parent != nullptr)
                 {
                     temp = temp->parent;
@@ -915,7 +910,7 @@ namespace Telephone_DS::treeBase::Tree
              */
             virtual int height()
             {
-                linkBase::Queue::Queue <TreeNode<U>*> nodeQueue;
+                linkBase::Queue::Queue<TreeNode<U> *> nodeQueue;
                 nodeQueue.push(this);
                 int height = -1;
                 while (!nodeQueue.isEmpty())
@@ -924,7 +919,7 @@ namespace Telephone_DS::treeBase::Tree
                     int times = nodeQueue.len();
                     for (int i = 0; i < times; ++i)
                     {
-                        linkBase::LinkedList::LinkedList <TreeNode<U>*> childrenList =
+                        linkBase::LinkedList::LinkedList<TreeNode<U> *> childrenList =
                             std::move(nodeQueue.front()->getChildren());
                         for (int j = 0; j < childrenList.len(); ++j)
                         {
@@ -944,7 +939,7 @@ namespace Telephone_DS::treeBase::Tree
              * child-nodes list. Actually, this function will do nothing besides setting current
              * node's parent node to the specified node
              */
-            virtual void setParent(TreeNode<U>& node)
+            virtual void setParent(TreeNode<U> &node)
             {
                 parent = &node;
             }
@@ -961,6 +956,7 @@ namespace Telephone_DS::treeBase::Tree
 
     public:
         TreeNode<T> root;
+
     public:
         /**
          * @brief general constructor(copy)
@@ -970,9 +966,10 @@ namespace Telephone_DS::treeBase::Tree
          * - root = a new node containing specified data with null parent-pointer and empty
          * child-nodes list
          */
-        explicit Tree(T const& data)
+        explicit Tree(T const &data)
             : root(data)
-        {}
+        {
+        }
         /**
          * @brief general constructor(move)
          * @param data data of the root-node
@@ -981,9 +978,10 @@ namespace Telephone_DS::treeBase::Tree
          * - root = a new node containing specified data with null parent-pointer and empty
          * child-nodes list
          */
-        explicit Tree(T&& data)
+        explicit Tree(T &&data)
             : root(std::move(data))
-        {}
+        {
+        }
         /**
          * @brief copy-constructor
          * @param src
@@ -994,23 +992,21 @@ namespace Telephone_DS::treeBase::Tree
          * the nodes of current tree will contain the same data as the nodes of the tree passed
          * in by parameter
          */
-        Tree(Tree<T> const& src)
+        Tree(Tree<T> const &src)
             : root(src.root.data)
         {
-            linkBase::Queue::Queue<TreeNode<T>*> row;
+            linkBase::Queue::Queue<TreeNode<T> *> row;
             row.push(&root);
             src.root.traverseAsTree(
-                [&]
-            (TreeNode<T>& nowNode, int rowIndex, int nodeIndex)
-                {
+                [&](TreeNode<T> &nowNode, int rowIndex, int nodeIndex) {
                     if (nowNode.isLeaf())
                     {
                         row.pop();
                         return;
                     }
-                    linkBase::LinkedList::LinkedList<TreeNode<T>*> childrenList =
+                    linkBase::LinkedList::LinkedList<TreeNode<T> *> childrenList =
                         std::move(nowNode.getChildren());
-                    TreeNode<T>* t = row.front();
+                    TreeNode<T> *t = row.front();
                     for (int i = 0; i < childrenList.len(); ++i)
                     {
                         t->addChildWithData(childrenList.at(i)->data);
@@ -1036,7 +1032,7 @@ namespace Telephone_DS::treeBase::Tree
          * the nodes of current tree will contain the same data as the nodes of the tree passed
          * in by parameter
          */
-        Tree(Tree<T>&& src) noexcept
+        Tree(Tree<T> &&src) noexcept
             : root(std::move(src.root.data))
         {
             root.children = std::move(src.root.children);
@@ -1064,12 +1060,12 @@ namespace Telephone_DS::treeBase::Tree
          * the nodes of current tree will contain the same data as the nodes of the tree passed
          * in by parameter
          */
-        Tree<T>& operator=(Tree<T> const& right)
+        Tree<T> &operator=(Tree<T> const &right)
         {
             if (this == &right)
                 return *this;
             /* ==================================== destruct ==================================== */
-            linkBase::LinkedList::LinkedList <TreeNode<T>*> freeList =
+            linkBase::LinkedList::LinkedList<TreeNode<T> *> freeList =
                 std::move(root.getAllNodes());
             for (int i = 1; i < freeList.len(); ++i)
             {
@@ -1078,20 +1074,18 @@ namespace Telephone_DS::treeBase::Tree
             /* ==================================== destruct ==================================== */
             root.children.deleteFrom(0, root.children.len());
             root.data = right.root.data;
-            linkBase::Queue::Queue<TreeNode<T>*> row;
+            linkBase::Queue::Queue<TreeNode<T> *> row;
             row.push(&root);
             right.root.traverseAsTree(
-                [&]
-            (TreeNode<T>& nowNode, int rowIndex, int nodeIndex)
-                {
+                [&](TreeNode<T> &nowNode, int rowIndex, int nodeIndex) {
                     if (nowNode.isLeaf())
                     {
                         row.pop();
                         return;
                     }
-                    linkBase::LinkedList::LinkedList<TreeNode<T>*> childrenList =
+                    linkBase::LinkedList::LinkedList<TreeNode<T> *> childrenList =
                         std::move(nowNode.getChildren());
-                    TreeNode<T>* t = row.front();
+                    TreeNode<T> *t = row.front();
                     for (int i = 0; i < childrenList.len(); ++i)
                     {
                         t->addChildWithData(childrenList.at(i)->data);
@@ -1121,10 +1115,10 @@ namespace Telephone_DS::treeBase::Tree
          * the nodes of current tree will contain the same data as the nodes of the tree passed
          * in by parameter
          */
-        Tree<T>& operator=(Tree<T>&& right) noexcept
+        Tree<T> &operator=(Tree<T> &&right) noexcept
         {
             /* ==================================== destruct ==================================== */
-            linkBase::LinkedList::LinkedList <TreeNode<T>*> freeList =
+            linkBase::LinkedList::LinkedList<TreeNode<T> *> freeList =
                 std::move(root.getAllNodes());
             for (int i = 1; i < freeList.len(); ++i)
             {
@@ -1148,8 +1142,7 @@ namespace Telephone_DS::treeBase::Tree
          */
         virtual ~Tree()
         {
-            linkBase::LinkedList::LinkedList <TreeNode<T>*> freeList
-                = std::move(root.getAllNodes());
+            linkBase::LinkedList::LinkedList<TreeNode<T> *> freeList = std::move(root.getAllNodes());
             for (int i = 1; i < freeList.len(); ++i)
             {
                 delete freeList.at(i);
@@ -1179,7 +1172,7 @@ namespace Telephone_DS::treeBase::Tree
          * in this case , the order of the leaf-nodes in the returned list is: up-to-down and
          * left-to-right
          */
-        virtual auto getLeaves() -> linkBase::LinkedList::LinkedList <TreeNode<T>*>
+        virtual auto getLeaves() -> linkBase::LinkedList::LinkedList<TreeNode<T> *>
         {
             return std::move(root.getLeafNodes());
         }
@@ -1203,16 +1196,13 @@ namespace Telephone_DS::treeBase::Tree
          * in this case , the order of the nodes in the returned list is: up-to-down and
          * left-to-right
          */
-        virtual auto findNodes(T const& data) -> linkBase::LinkedList::LinkedList <TreeNode<T>*>
+        virtual auto findNodes(T const &data) -> linkBase::LinkedList::LinkedList<TreeNode<T> *>
         {
-            linkBase::LinkedList::LinkedList <TreeNode<T>*> res;
-            if (typeid(T) == typeid(float) || typeid(T) == typeid(double)
-                || typeid(T) == typeid(long double))
+            linkBase::LinkedList::LinkedList<TreeNode<T> *> res;
+            if (typeid(T) == typeid(float) || typeid(T) == typeid(double) || typeid(T) == typeid(long double))
             {
                 root.traverseAsTree(
-                    [&]
-                (TreeNode<T>& nowNode, int rowIndex, int nodeIndex)
-                    {
+                    [&](TreeNode<T> &nowNode, int rowIndex, int nodeIndex) {
                         if (std::fabs(nowNode.data - data) <= 1e-6)
                         {
                             res.addAfter(res.len() - 1, &nowNode);
@@ -1222,9 +1212,7 @@ namespace Telephone_DS::treeBase::Tree
             else
             {
                 root.traverseAsTree(
-                    [&]
-                (TreeNode<T>& nowNode, int rowIndex, int nodeIndex)
-                    {
+                    [&](TreeNode<T> &nowNode, int rowIndex, int nodeIndex) {
                         if (nowNode.data == data)
                         {
                             res.addAfter(res.len() - 1, &nowNode);
@@ -1259,14 +1247,12 @@ namespace Telephone_DS::treeBase::Tree
          * in this case , the order of the nodes in the returned list is: up-to-down and
          * left-to-right
          */
-        virtual auto findNodes(T const& data, std::function<int(T const&, T const&)> equal)
-            -> linkBase::LinkedList::LinkedList <TreeNode<T>*>
+        virtual auto findNodes(T const &data, std::function<int(T const &, T const &)> equal)
+            -> linkBase::LinkedList::LinkedList<TreeNode<T> *>
         {
-            linkBase::LinkedList::LinkedList <TreeNode<T>*> res;
+            linkBase::LinkedList::LinkedList<TreeNode<T> *> res;
             root.traverseAsTree(
-                [&]
-            (TreeNode<T>& nowNode, int rowIndex, int nodeIndex)
-                {
+                [&](TreeNode<T> &nowNode, int rowIndex, int nodeIndex) {
                     if (equal(data, nowNode.data))
                     {
                         res.addAfter(res.len() - 1, &nowNode);
@@ -1300,14 +1286,11 @@ namespace Telephone_DS::treeBase::Tree
          * in this case , the order of the nodes in the returned list is: up-to-down and
          * left-to-right
          */
-        virtual auto findNodes(T& data, std::function<int(T&, T&)> equal) ->
-            linkBase::LinkedList::LinkedList <TreeNode<T>*>
+        virtual auto findNodes(T &data, std::function<int(T &, T &)> equal) -> linkBase::LinkedList::LinkedList<TreeNode<T> *>
         {
-            linkBase::LinkedList::LinkedList <TreeNode<T>*> res;
+            linkBase::LinkedList::LinkedList<TreeNode<T> *> res;
             root.traverseAsTree(
-                [&]
-            (TreeNode<T>& nowNode, int rowIndex, int nodeIndex)
-                {
+                [&](TreeNode<T> &nowNode, int rowIndex, int nodeIndex) {
                     if (equal(data, nowNode.data))
                     {
                         res.addAfter(res.len() - 1, &nowNode);
@@ -1324,9 +1307,9 @@ namespace Telephone_DS::treeBase::Tree
          * is not empty , return a pointer which is actually the item of index 0 in the list
          * - or else , return nullptr
          */
-        virtual auto findNode(T const& data) -> TreeNode<T>*
+        virtual auto findNode(T const &data) -> TreeNode<T> *
         {
-            linkBase::LinkedList::LinkedList<TreeNode<T>*> res = std::move(findNodes(data));
+            linkBase::LinkedList::LinkedList<TreeNode<T> *> res = std::move(findNodes(data));
             if (res.isEmpty())
                 return nullptr;
             return res.at(0);
@@ -1342,10 +1325,9 @@ namespace Telephone_DS::treeBase::Tree
          * is not empty , return a pointer which is actually the item of index 0 in the list
          * - or else , return nullptr
          */
-        virtual auto findNode(T const& data, std::function<int(T const&, T const&)> equal) ->
-            TreeNode<T>*
+        virtual auto findNode(T const &data, std::function<int(T const &, T const &)> equal) -> TreeNode<T> *
         {
-            linkBase::LinkedList::LinkedList<TreeNode<T>*> res = std::move(findNodes(data, equal));
+            linkBase::LinkedList::LinkedList<TreeNode<T> *> res = std::move(findNodes(data, equal));
             if (res.isEmpty())
                 return nullptr;
             return res.at(0);
@@ -1361,14 +1343,14 @@ namespace Telephone_DS::treeBase::Tree
          * is not empty , return a pointer which is actually the item of index 0 in the list
          * - or else , return nullptr
          */
-        virtual auto findNode(T& data, std::function<int(T&, T&)> equal) -> TreeNode<T>*
+        virtual auto findNode(T &data, std::function<int(T &, T &)> equal) -> TreeNode<T> *
         {
-            linkBase::LinkedList::LinkedList<TreeNode<T>*> res = std::move(findNodes(data, equal));
+            linkBase::LinkedList::LinkedList<TreeNode<T> *> res = std::move(findNodes(data, equal));
             if (res.isEmpty())
                 return nullptr;
             return res.at(0);
         }
     };
-}
+} // namespace Telephone_DS::treeBase::Tree
 
 #endif //TREE_TREE_H
